@@ -83,3 +83,144 @@ a {
   font-weight: 400;
   font-style: normal;
 }
+
+
+/* Подключаем шрифт в самом начале файла */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Общий фон всей страницы и глобальный шрифт */
+body {
+    background-color: #D2EAFF;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif; /* Теперь шрифт применится ко всему сайту */
+}
+
+/* ========================================= */
+/* СТИЛИ АГЗАМА (Морской дизайн: Sky & Sea)  */
+/* ========================================= */
+
+/* Обертка карточек актеров */
+#pitt-page, #statham-page {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #D2EAFF;
+    border: 4px solid #6482F2;
+    color: #333333;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(100, 130, 242, 0.2);
+}
+
+/* Заголовки */
+#pitt-page h1, #statham-page h1 {
+    color: #6482F2;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 2px solid rgba(100, 130, 242, 0.3);
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* Анимация картинок */
+#pitt-page .profile-img, #statham-page .profile-img {
+    display: block;
+    margin: 0 auto 30px;
+    border: 4px solid #6482F2;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#pitt-page .profile-img:hover, #statham-page .profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(100, 130, 242, 0.4);
+}
+
+/* Обычное фото Питта */
+#pitt-page .profile-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    object-fit: cover; /* Чтобы фото не искажалось */
+}
+
+/* КРУГЛОЕ фото Стэйтема (Обязательный критерий!) */
+#statham-page .profile-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    object-fit: cover; /* Чтобы фото не искажалось */
+}
+
+/* Стилизация таблицы */
+#pitt-page .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+#pitt-page th {
+    background-color: #6482F2;
+    color: #ffffff;
+    padding: 15px 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+#pitt-page td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #D2EAFF;
+    color: #333333;
+}
+
+#pitt-page tr:hover td {
+    background-color: #f0f7ff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Стилизация списков */
+#statham-page .facts-list {
+    list-style: none;
+    padding: 0;
+}
+
+#statham-page .facts-list li {
+    background: #ffffff;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-left: 5px solid #6482F2;
+    border-radius: 0 8px 8px 0;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#statham-page .facts-list li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 10px rgba(100, 130, 242, 0.2);
+}
+
+/* Стилизация ссылок на Википедию */
+#pitt-page .wiki-link, #statham-page .wiki-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #6482F2;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dashed #6482F2;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+#pitt-page .wiki-link:hover, #statham-page .wiki-link:hover {
+    color: #333333;
+    border-bottom-color: #333333;
+}

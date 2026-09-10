@@ -239,10 +239,8 @@ ul {
 
 
 
-/* Подключаем шрифт в самом начале файла */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-/* Общий фон всей страницы и глобальный шрифт */
 body {
     background-color: #D2EAFF;
     margin: 0;
@@ -251,10 +249,9 @@ body {
 }
 
 /* ========================================= */
-/* СТИЛИ АГЗАМА (Морской дизайн: Sky & Sea)  */
+/*       АГЗАМА (Морской дизайн: Sky & Sea)  */
 /* ========================================= */
 
-/* Обертка карточек актеров */
 #pitt-page, #statham-page, #carrey-page, #gosling-page {
     max-width: 900px;
     margin: 50px auto;
@@ -266,7 +263,6 @@ body {
     box-shadow: 0 10px 25px rgba(100, 130, 242, 0.2);
 }
 
-/* Заголовки */
 #pitt-page h1, #statham-page h1 {
     color: #6482F2;
     font-size: 3rem;
@@ -279,7 +275,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Анимация картинок */
 #pitt-page .profile-img, #statham-page .profile-img {
     display: block;
     margin: 0 auto 30px;
@@ -293,23 +288,20 @@ body {
     box-shadow: 0 12px 25px rgba(100, 130, 242, 0.4);
 }
 
-/* Обычное фото Питта */
 #pitt-page .profile-img {
     width: 100%;
     max-width: 300px;
     border-radius: 15px;
-    object-fit: cover; /* Чтобы фото не искажалось */
+    object-fit: cover;
 }
 
-/* КРУГЛОЕ фото Стэйтема (Обязательный критерий!) */
 #statham-page .profile-img {
     width: 100%;
     max-width: 300px;
     border-radius: 15px;
-    object-fit: cover; /* Чтобы фото не искажалось */
+    object-fit: cover;
 }
 
-/* Стилизация таблицы */
 #pitt-page .data-table {
     width: 100%;
     border-collapse: collapse;
@@ -341,13 +333,13 @@ body {
     transition: background-color 0.2s ease;
 }
 
-/* Стилизация списков */
 #statham-page .facts-list {
     list-style: none;
     padding: 0;
 }
 
 #statham-page .facts-list li {
+    color: #6482F2;
     background: #ffffff;
     margin-bottom: 15px;
     padding: 15px 20px;
@@ -361,6 +353,9 @@ body {
 #statham-page .facts-list li:hover {
     transform: translateX(10px);
     box-shadow: 0 4px 10px rgba(100, 130, 242, 0.2);
+}
+.li-stathem {
+  color:#6482F2;
 }
 
 /* Стилизация ссылок на Википедию */

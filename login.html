@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login page</title>
+        <style>
+            body{
+                background-color: #D2EAFF;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .banner{
+                    border-radius: 20px;
+                    background-color: #D2EAFF;
+                    border: 6px solid #6482F2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 400px;
+                    width: 450px;
+                }
+            .banner-main{
+                height: 300px;
+                width: 400px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                justify-content: center
+            }
+            .input-field {
+                border: 2px solid #6482F2;
+                border-radius: 10px;
+
+                padding: 12px 16px;
+                font-size: 16px;
+
+                background-color: white;
+                color: #333;
+
+                outline: none;
+
+                width: 400px;
+                box-sizing: border-box;
+            }
+            .btn{
+                border: none;
+                border-radius: 10px;
+                padding: 12px 24px;
+                font-size: 25px;
+                cursor: pointer;
+                background: #6482F2;
+                color: #D2EAFF;
+                cursor: pointer;
+            }
+            .btn1:active{
+                background: #7186cf;
+            }
+            .btn2{
+                font-size: 16px;
+            }
+            .btn2:active{
+                background: #7186cf;
+            }
+            h1{
+                color: #6482F2;
+                font-size: 40px;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="banner">
+            <div class="banner-main">
+                <h1>Login page</h1>
+                <input type="text" placeholder="Login" class="input-field">
+                <input type="password" placeholder="Password" class="input-field">
+                <a href="manePage.html" style="text-decoration: none;"><div class="btn btn1">submit</div></a>
+            </div>
+        </div>
+        <a href="register.html" style="text-decoration: none;">
+            <div class="btn btn2">Dont have an account?</div>
+        </a>
+    </body>
+</html>

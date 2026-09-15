@@ -99,13 +99,12 @@ body {
 }
 .buttons-group {
     display: flex;
-    flex-direction: column; /* Кнопки одна под другой */
+    flex-direction: column;
     align-items: center;    
     gap: 12px;              
     margin: 25px 0;        
 }
 
-/* Единый стиль для всех кнопок */
 .btn-link {
     width: 300px;
     text-align: center;
@@ -245,7 +244,7 @@ body {
     background-color: #D2EAFF;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif; /* Теперь шрифт применится ко всему сайту */
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* ========================================= */
@@ -358,7 +357,6 @@ body {
   color:#6482F2;
 }
 
-/* Стилизация ссылок на Википедию */
 #pitt-page .wiki-link, #statham-page .wiki-link {
     display: inline-block;
     margin-top: 15px;

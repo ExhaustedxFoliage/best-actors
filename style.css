@@ -15,14 +15,17 @@ border: 2px solid #D2EAFF;
 border-radius: 12px;
 padding: 10px;
 box-sizing: border-box;
+margin-top: 10px;
 }
 .banner-inner {
 color: #6482F2;
 background-color: #FFFFFF;
 border-radius: 10px;
-width: 380px;
+width: 330px;
+height: 480px;
 padding: 20px;
 box-sizing: border-box;
+border: 5px solid #6482F2;
 }
 .banner-inner h1 {
 color: #6482F2;
@@ -47,8 +50,14 @@ margin-top:20px;
 width: 320px;
 height: 480px;
 object-fit: cover;
-border: 2px solid #D2EAFF;
+border: 5px solid #6482F2;
 border-radius: 10px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-img:hover {
+transform: scale(1.05);
+box-shadow: 0 12px 25px rgba(100, 130, 242, 0.4);
 }
 .btn-main-page {
 width: 300px;
@@ -228,6 +237,7 @@ font-optical-sizing: auto;
 font-weight: 400;
 font-style: normal;
 }
+
 
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');

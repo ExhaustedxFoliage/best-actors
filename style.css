@@ -10,6 +10,21 @@ min-height: 100vh;
 display: flex;
 flex-direction: column;
 }
+.flex-container { 
+    display: flex;
+    border: 1px solid dodgerblue;
+    background-color: #6482F2;
+    padding: 25px; 
+    
+    flex-direction: column;
+    min-height: 10vh;
+}
+.card {
+  flex: 1;
+  background-color: #6482F2;
+  border: 1px solid black;
+
+}
 .banner {
 border: 2px solid #D2EAFF;
 border-radius: 12px;
@@ -112,6 +127,8 @@ align-items: center;
 gap: 12px;
 margin: 25px 0;
 }
+
+
 
 .btn-link {
 width: 300px;

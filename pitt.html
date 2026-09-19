@@ -6,58 +6,103 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
 
-</header>
+<div class="page-wrapper">
 
-<main id="pitt-page">
-    <section class="actor-profile">
-        <h1>Brad Pitt</h1>
-        <img src="photos/pitt.jpg" alt="Photograph of Brad Pitt" class="profile-img">
+    <header class="main-header">
+        <div class="logo">ActorsHub</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="Jim-Carrey.html">Jim Carrey</a>
+            <a href="pitt.html">Brad Pitt</a>
+            <a href="statham.html">Jason Statham</a>
+        </nav>
+    </header>
+    <aside class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="#biography">Biography</a></li>
+            <li><a href="#filmography">Top Movies</a></li>
+            <li><a href="#gallery">Photo Gallery</a></li>
+            <li><a href="#form">Register</a></li>
+        </ul>
+    </aside>
 
-        <div class="biography">
-            <h2>Brief Biography</h2>
-            <p>William Bradley Pitt is an outstanding American actor and film producer. He began his career in the late 1980s and quickly gained worldwide popularity thanks to striking roles in cult films such as "Fight Club", "Thelma & Louise", and "Interview with the Vampire".</p>
-            <p>Over his long career, Pitt has received numerous prestigious awards, including two Academy Awards (one as a producer for "12 Years a Slave", and the second as Best Supporting Actor for Quentin Tarantino's "Once Upon a Time in Hollywood"). Besides cinema, he is known for his active humanitarian work and passion for architecture.</p>
+    <main id="pitt-page">
+        <section class="actor-profile">
+            <h1>Brad Pitt</h1>
+            <img src="photos/pitt.jpg" alt="Photograph of Brad Pitt" class="profile-img">
 
-            <p><a href="https://en.wikipedia.org/wiki/Brad_Pitt" target="_blank" class="wiki-link">Read the full biography on Wikipedia ↗</a></p>
-        </div>
+            <div class="biography" id="biography">
+                <h2>Brief Biography</h2>
+                <p>William Bradley Pitt is an outstanding American actor and film producer. He began his career in the late 1980s and quickly gained worldwide popularity thanks to striking roles in cult films such as "Fight Club", "Thelma & Louise", and "Interview with the Vampire".</p>
+                <p>Over his long career, Pitt has received numerous prestigious awards, including two Academy Awards. Besides cinema, he is known for his active humanitarian work and passion for architecture.</p>
+                <p><a href="https://en.wikipedia.org/wiki/Brad_Pitt" target="_blank" class="wiki-link">Read the full biography on Wikipedia ↗</a></p>
+            </div>
 
-        <div class="filmography">
-            <h3>Selected Filmography</h3>
-            <table class="data-table">
-                <thead>
-                <tr>
-                    <th>Year</th>
-                    <th>Film Title</th>
-                    <th>Role</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1999</td>
-                    <td>Fight Club</td>
-                    <td>Tyler Durden</td>
-                </tr>
-                <tr>
-                    <td>2001</td>
-                    <td>Ocean's Eleven</td>
-                    <td>Rusty Ryan</td>
-                </tr>
-                <tr>
-                    <td>2019</td>
-                    <td>Once Upon a Time in Hollywood</td>
-                    <td>Cliff Booth</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-</main>
-<footer class="footer-banner">
-    <p>Created by: Murodyan Mansur, Kairbek Agzam, Korostylev Dimitry. SE-2513 group. Team "ъ"</p>
-    <p>Date: 08 September 2025</p>
-</footer>
+            <div class="filmography" id="filmography">
+                <h3>Top Movies</h3>
+                <div class="cards-container">
 
+                    <div class="card">
+                        <img src="photos/bradpittffightclub.jpg" alt="Fight Club">
+                        <h4>Fight Club</h4>
+                        <p>Role: Tyler Durden (1999)</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="photos/bradpittocean11.jpg" alt="Ocean's Eleven">
+                        <h4>Ocean's Eleven</h4>
+                        <p>Role: Rusty Ryan (2001)</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="photos/bradpittonceupon.jpg" alt="Hollywood">
+                        <h4>Once Upon a Time...</h4>
+                        <p>Role: Cliff Booth (2019)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-section" id="gallery">
+                <h3>Photo Gallery</h3>
+                <div class="grid-gallery">
+                    <div class="gallery-item"><img src="photos/bradpittoscar.jpg" alt="Pitt 1"><div class="overlay">Oscar 2020</div></div>
+                    <div class="gallery-item"><img src="photos/bradpittpremier.jpg" alt="Pitt 2"><div class="overlay">Premiere</div></div>
+                    <div class="gallery-item"><img src="photos/bradpittinterview.jpg" alt="Pitt 3"><div class="overlay">Interview</div></div>
+                    <div class="gallery-item"><img src="photos/bradpittphotoshoot.jpg" alt="Pitt 4"><div class="overlay">Photoshoot</div></div>
+                    <div class="gallery-item"><img src="photos/bradpittonset.jpg" alt="Pitt 5"><div class="overlay">On set</div></div>
+                    <div class="gallery-item"><img src="photos/bradpittcannes.jpg" alt="Pitt 6"><div class="overlay">Cannes</div></div>
+                    <div class="gallery-item"><img src="photos/bradpittaward.jpg" alt="Pitt 7"><div class="overlay">Award</div></div>
+                    <div class="gallery-item"><img src="photos/bradpittportrait.webp" alt="Pitt 8"><div class="overlay">Portrait</div></div>
+                    <div class="gallery-item"><img src="photos/bradpittredcarpet.jpg" alt="Pitt 9"><div class="overlay">Red Carpet</div></div>
+                </div>
+            </div>
+
+            <hr style="margin: 40px 0; border: 1px solid #D2EAFF;">
+            <form action="/submit-data" method="POST" id="form">
+                <h3>Join the Fan Club</h3>
+                <div>
+                    <label for="username">Name</label>
+                    <input type="text" id="username" name="username" placeholder="Agzam" required>
+                </div>
+                <div>
+                    <label for="surname">Surname</label>
+                    <input type="text" id="surname" name="surname" placeholder="Kairbek" required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Make a password" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+
+        </section>
+    </main>
+    <footer class="main-footer footer-banner">
+        <p>Created by: Murodyan Mansur, Kairbek Agzam, Korostylev Dimitry. SE-2513 group. Team "ъ"</p>
+        <p>Date: 08 September 2025</p>
+    </footer>
+</div>
 </body>
 </html>

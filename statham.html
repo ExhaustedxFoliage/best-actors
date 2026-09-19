@@ -6,36 +6,91 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-</header>
+<div class="page-wrapper">
+  <header class="main-header">
+    <div class="logo">ActorsHub</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Jim-Carrey.html">Jim Carrey</a>
+      <a href="pitt.html">Brad Pitt</a>
+      <a href="statham.html">Jason Statham</a>
+    </nav>
+  </header>
 
-<main id="statham-page">
-  <section class="actor-profile">
-    <h1>Jason Statham</h1>
-    <img src="photos/statham.jpg" alt="Photograph of Jason Statham" class="profile-img">
+  <aside class="sidebar">
+    <h3>Menu</h3>
+    <ul>
+      <li><a href="#biography">Biography</a></li>
+      <li><a href="#facts">Interesting Facts</a></li>
+      <li><a href="#movies">Top Movies</a></li>
+      <li><a href="#gallery">Photo Gallery</a></li>
+    </ul>
+  </aside>
+  <main id="statham-page">
+    <section class="actor-profile">
+      <h1>Jason Statham</h1>
+      <img src="photos/statham.jpg" alt="Photograph of Jason Statham" class="profile-img">
 
-    <div class="biography">
-      <h2>Brief Biography</h2>
-      <p>Jason Statham is a famous British actor and a global action movie superstar. Before starting his acting career, he was seriously involved in sports and was a member of Britain's National Diving Squad for 12 years.</p>
-      <p>His path in cinema began thanks to meeting director Guy Ritchie, who cast him in leading roles in the crime comedies "Lock, Stock and Two Smoking Barrels" and "Snatch". Since then, Statham has become one of the most recognizable action heroes, starring in successful franchises such as "The Transporter", "Crank", "The Expendables", and "Fast & Furious".</p>
+      <div class="biography" id="biography">
+        <h2>Brief Biography</h2>
+        <p>Jason Statham is a famous British actor and a global action movie superstar. Before starting his acting career, he was seriously involved in sports and was a member of Britain's National Diving Squad for 12 years.</p>
+        <p>His path in cinema began thanks to meeting director Guy Ritchie, who cast him in leading roles in the crime comedies "Lock, Stock and Two Smoking Barrels" and "Snatch". Since then, Statham has become one of the most recognizable action heroes, starring in successful franchises such as "The Transporter", "Crank", "The Expendables", and "Fast & Furious".</p>
+        <p><a href="https://en.wikipedia.org/wiki/Jason_Statham" target="_blank" class="wiki-link">Read the full biography on Wikipedia ↗</a></p>
+      </div>
 
-      <p><a href="https://en.wikipedia.org/wiki/Jason_Statham" target="_blank" class="wiki-link">Read the full biography on Wikipedia ↗</a></p>
-    </div>
+      <div class="facts" id="facts">
+        <h3>Interesting Facts</h3>
+        <ul class="facts-list">
+          <li>Statham is a master of martial arts (jiu-jitsu, kickboxing), which is why he performs most of the dangerous stunts on set himself.</li>
+          <li>Before becoming famous, he worked as a street seller of perfume and jewelry, and was also a model for the French Connection brand.</li>
+          <li>In his youth, he was passionate about football and played for a local team alongside actor Vinnie Jones.</li>
+        </ul>
+      </div>
 
-    <div class="facts">
-      <h3>Interesting Facts</h3>
-      <ul class="facts-list">
-        <li>Statham is a master of martial arts (jiu-jitsu, kickboxing), which is why he performs most of the dangerous stunts on set himself.</li>
-        <li>Before becoming famous, he worked as a street seller of perfume and jewelry, and was also a model for the French Connection brand.</li>
-        <li>In his youth, he was passionate about football and played for a local team alongside actor Vinnie Jones.</li>
-      </ul>
-    </div>
-  </section>
-</main>
-<footer class="footer-banner">
-  <p>Created by: Murodyan Mansur, Kairbek Agzam, Korostylev Dimitry. SE-2513 group. Team "ъ"</p>
-  <p>Date: 08 September 2025</p>
-</footer>
+      <div class="filmography" id="movies">
+        <h3>Top Movies</h3>
+        <div class="cards-container">
+          <div class="card">
+            <img src="photos/stathamtransporter.jpg" alt="The Transporter">
+            <h4>The Transporter</h4>
+            <p>Role: Frank Martin (2002)</p>
+          </div>
+          <div class="card">
+            <img src="photos/sthatamcrank.jpg" alt="Crank">
+            <h4>Crank</h4>
+            <p>Role: Chev Chelios (2006)</p>
+          </div>
+          <div class="card">
+            <img src="photos/sthatamsnatch.jpg" alt="Snatch">
+            <h4>Snatch</h4>
+            <p>Role: Turkish (2000)</p>
+          </div>
+        </div>
+      </div>
 
+
+      <div class="gallery-section" id="gallery">
+        <h3>Photo Gallery</h3>
+        <div class="grid-gallery">
+          <div class="gallery-item"><img src="photos/stathamsction.jpg" alt="Statham 1"><div class="overlay">Action Scene</div></div>
+          <div class="gallery-item"><img src="photos/stathampremiere2.jpg" alt="Statham 2"><div class="overlay">Premiere</div></div>
+          <div class="gallery-item"><img src="photos/stathaminterview.jpg" alt="Statham 3"><div class="overlay">Interview</div></div>
+          <div class="gallery-item"><img src="photos/stathamtraining.jpg" alt="Statham 4"><div class="overlay">Training</div></div>
+          <div class="gallery-item"><img src="photos/stathamonset.webp" alt="Statham 5"><div class="overlay">On set</div></div>
+          <div class="gallery-item"><img src="photos/stathamcarchase.webp" alt="Statham 6"><div class="overlay">Car Chase</div></div>
+          <div class="gallery-item"><img src="photos/stathamphotoshoot.jpg" alt="Statham 7"><div class="overlay">Photoshoot</div></div>
+          <div class="gallery-item"><img src="photos/stathamportrait.jpg" alt="Statham 8"><div class="overlay">Portrait</div></div>
+          <div class="gallery-item"><img src="photos/stathamcarpetred.jpg" alt="Statham 9"><div class="overlay">Red Carpet</div></div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  <footer class="main-footer footer-banner">
+    <p>Created by: Murodyan Mansur, Kairbek Agzam, Korostylev Dimitry. SE-2513 group. Team "ъ"</p>
+    <p>Date: 08 September 2025</p>
+  </footer>
+
+</div>
 </body>
 </html>

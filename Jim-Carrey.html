@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jim Carrey - ActorsHub</title>
+
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jim Carrey - Actors</title>
+    
 </head>
 <body>
     <div class="page-wrapper"> 
@@ -17,7 +19,7 @@
             <div class="logo">ActorsHub</div>
                 <nav class="nav-links">
                     <a href="index.html">Home</a>
-                    <a href="Jim-Carrey.html">Jim Carrey</a>
+                    <a href="Ryan-Gosling.html">Jim Carrey</a>
                     <a href="pitt.html">Brad Pitt</a>
                     <a href="statham.html">Jason Statham</a>
                     <a href="antony_starr.html"> Antony Starr</a>
@@ -28,56 +30,119 @@
         <h3>Menu</h3>
             <ul>
                 <li><a href="#biography">Biography</a></li>
-                <li><a href="#popular_films">Popular films</a></li>
-                <li><a href="#gallery">Top Movies</a></li>
-                <li><a href="#IMD|WIKI">IMD | WIKI </a></li>
+                <li><a href="#facts">Facts</a></li>
+                <li><a href="#cards">Top Movies</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#links">Links</a></li>
             </ul>
     </aside>
 
     <main id="carrey-page">
     <div class="container">
-        
+        <img src="photos/Carrey1.jpg" alt="Jim Carrey1" class="profile-img">
         <div class="banner">
-            <div class="banner-inner"> 
+            <div class="banner-inner" id="biography"> 
                 <h1>Jim Carrey</h1>
                 <p>James Eugene Carrey (born January 17, 1962) is a Canadian and American actor and comedian. 
                     Known primarily for his energetic slapstick performances, he is regarded as one of the most prominent comedic actors of his generation. 
                     He broke out as a film star after starring in a string of box office hits, such as Ace Ventura: Pet Detective, 
                     The Mask, Dumb and Dumber (all 1994), Ace Ventura: When Nature Calls, and Batman Forever (both 1995). 
                 </p>
-
             </div>
         </div>
 
-        <!-- <img src="photos/Carrey.jpg" alt="Jim Carrey" class="profile-img"> !-->
-        <!-- <img src="photos/Carrey0.jpg" alt="Jim Carrey0" class="profile-img"> !-->
-        <img src="photos/Carrey1.jpg" alt="Jim Carrey1" class="profile-img">
+        
     </div>
 
 
-    <div class="banner-facts-inner">
+    <div class="banner-facts-inner" id="facts" style="margin-top: 20px;">
         <h3>Interesting Facts about Jim Carrey</h3>
-            <ul id="facts-list">
-                        <li>He was born in Newmarket, Ontario, Canada.</li>
-                        <li>He has won 2 Golden Globe Awards.</li>
-                        <li>He is known for his energetic slapstick performances.</li>
-                        <li>He has received nominations for BAFTA Awards and Screen Actors Guild Awards.</li>
-            </ul>
+        <ul id="facts-list">
+            <li>He was born in Newmarket, Ontario, Canada.</li>
+            <li>He has won 2 Golden Globe Awards.</li>
+            <li>He is known for his energetic slapstick performances.</li>
+            <li>He has received nominations for BAFTA Awards and Screen Actors Guild Awards.</li>
+        </ul>
     </div>
     
+    <section id="cards" style="margin-top: 40px;">
+                <h2>Featured Works</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="photos/Carrey_mask.png" alt="The Mask">
+                        <h4>The Mask (1994)</h4>
+                        <p>A timid bank clerk turns into a grinning superhero with wild abilities after discovering a magical wooden mask.</p>
+                        <button onclick="window.open('https://www.imdb.com/title/tt0110475/', '_blank')">Read More</button>
+                    </div>
+                    <div class="card">
+                        <img src="photos/Carrey_dumb.png" alt="Dumb and Dumber">
+                        <h4>Dumb and Dumber (1994)</h4>
+                        <p>Two well-meaning but incredibly dimwitted friends embark on a cross-country trip to return a briefcase.</p>
+                        <button onclick="window.open('https://www.imdb.com/title/tt0109686/', '_blank')">Read More</button>
+                    </div>
+                    <div class="card">
+                        <img src="photos/Carrey_truman.jpg" alt="The Truman Show">
+                        <h4>The Truman Show (1998)</h4>
+                        <p>An insurance salesman discovers his entire life is actually a seamlessly orchestrated reality television show.</p>
+                        <button onclick="window.open('https://www.imdb.com/title/tt0120382/', '_blank')">Read More</button>
+                    </div>
+                </div>
+            </section>
 
-    <div class="buttons-group">
-    <a class="btn-link" href="https://www.imdb.com/name/nm0000120/">IMDB</a>
-    <a class="btn-link" href="https://en.wikipedia.org/wiki/Jim_Carrey">Wikipedia</a>
-    <a class="btn-link" href="index.html">Main page</a>
-    </div>
-    
-    </div>
+    <section class="gallery-section" id="gallery">
+                <h2>Photo Gallery</h2>
+                <div class="grid-gallery">
+                    <div class="gallery-item">
+                        <img src="photos/Carrey_Ace.jpg" alt="Ace Ventura">
+                        <div class="overlay">Ace Ventura</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photos/Carrey_mask2.jpg" alt="The Mask">
+                        <div class="overlay">The Mask</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photos/Carrey_dumb2.jpg" alt="Dumb and Dumber">
+                        <div class="overlay">Dumb and Dumber</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photos/Carrey_liarliar.jpg" alt="Liar Liar">
+                        <div class="overlay">Liar Liar</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photos/Carrey_truman2.jpg" alt="The Truman Show">
+                        <div class="overlay">The Truman Show</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photos/Carrey_moon.jpg" alt="Man on the Moon">
+                        <div class="overlay">Man on the Moon</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photos/Carrey_almighty.jpg" alt="Bruce Almighty">
+                        <div class="overlay">Bruce Almighty</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photos/Carrey_eternal.jpg" alt="Eternal Sunshine">
+                        <div class="overlay">Eternal Sunshine</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photos/Carrey_Sonic.jpg" alt="Sonic The Hedgehog">
+                        <div class="overlay">Sonic The Hedgehog</div>
+                    </div>
+                </div>
+            </section>
 
+        
+        <div class="buttons-group">
+        <a class="btn-link" href="https://www.imdb.com/name/nm0000120/">IMDB</a>
+        <a class="btn-link" href="https://en.wikipedia.org/wiki/Jim_Carrey">Wikipedia</a>
+        <a class="btn-link" href="index.html">Main page</a>
+        </div>
     </main>
-    <footer class="footer-banner">
-        <p>Created by: Murodyan Mansur, Kairbek Agzam, Korostylev Dimitry. SE-2513 group. Team "ъ"</p>
-        <p>Date: 08 September 2025</p>
-    </footer>
+    </div>
+
+        <footer class="footer-banner">
+            <p>Created by: Murodyan Mansur, Kairbek Agzam, Korostylev Dimitry. SE-2513 group. Team "ъ"</p>
+            <p>Date: 08 September 2025</p>
+        </footer>
 </body>
 </html>

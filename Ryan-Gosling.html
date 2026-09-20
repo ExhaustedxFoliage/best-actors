@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Gosling Actorshub</title>
+
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Gosling - Actors</title>
+ 
 </head>
 <body>  
     <div class="page-wrapper"> 
@@ -29,8 +30,9 @@
             <ul>
                 <li><a href="#biography">Biography</a></li>
                 <li><a href="#popular_films">Popular films</a></li>
-                <li><a href="#gallery">Top Movies</a></li>
+                <li><a href="#gallery">Photo Gallery</a></li>
                 <li><a href="#IMD|WIKI">IMD | WIKI </a></li>
+                <li><a href="#links">Links</a></li>
             </ul>
     </aside>
 
@@ -52,10 +54,6 @@
                 </p>
             </div>
         </div>
-
-        
-        <!-- <img src="photos/Gosling0.jpg" alt="Ryan Gosling0" class="profile-img"> !-->
-        <!-- <img src="photos/Gosling1.jpg" alt="Ryan Gosling0" class="profile-img"> !-->
     </div>
 
 
@@ -71,7 +69,7 @@
             <tbody>
                 <tr>
                     <td>Drive</td>
-                    <td class="lol" >Sean Gunn</td>
+                    <td>Sean Gunn</td>
                     <td>2011</td>
                 </tr>
                 <tr>
@@ -87,6 +85,73 @@
             </tbody>
         </table>
     </div>
+
+    <section id="cards" style="margin-top: 40px;">
+                <h2>Best Performances</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="https://static0.colliderimages.com/wordpress/wp-content/uploads/2021/09/DRIVE.jpg?q=70&fit=crop&w=1232&h=693&dpr=1" alt="Drive">
+                        <h4>Drive (2011)</h4>
+                        <p>A mysterious Hollywood stuntman and getaway driver gets into trouble when he helps his neighbor.</p>
+                        <button onclick="window.open('https://www.imdb.com/title/tt0780504/', '_blank')">Read More</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://wallpaperaccess.com/full/184724.jpg" alt="La La Land">
+                        <h4>La La Land (2016)</h4>
+                        <p>While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations.</p>
+                        <button onclick="window.open('https://www.imdb.com/title/tt3783958/', '_blank')">Read More</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2017/05/Ryan-Gosling-from-the-Blade-Runner-2049-poster.jpg?q=50&fit=crop&w=360&h=240&dpr=1.5" alt="Blade Runner 2049">
+                        <h4>Blade Runner 2049 (2017)</h4>
+                        <p>Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard.</p>
+                        <button onclick="window.open('https://www.imdb.com/title/tt1856101/', '_blank')">Read More</button>
+                    </div>
+                </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+                <h2>Photo Gallery</h2>
+                <div class="grid-gallery">
+                    <div class="gallery-item">
+                        <img src="https://imgs.search.brave.com/DeTV6ktRGS0wldK0VSCOuMCuF9Ymm3_rX41G22gRNw0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMwLmNvbGxpZGVy/aW1hZ2VzLmNvbS93/b3JkcHJlc3Mvd3At/Y29udGVudC91cGxv/YWRzLzIwMjMvMDcv/dGhlLW5vdGVib29r/LW1jYWRhbXMtZ29z/bGluZy5wbmc_cT03/MCZmaXQ9Y3JvcCZ3/PTgyNSZkcHI9MQ" alt="The Notebook">
+                        <div class="overlay">The Notebook</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://m.media-amazon.com/images/M/MV5BN2U3MWQwMTktZmIyMy00ZTY5LTk4ZjEtYTAwMTViMzk0OGJjXkEyXkFqcGc@._V1_QL75_UX329_.jpg" alt="Half Nelson">
+                        <div class="overlay">Half Nelson</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMjA0NTI1OTY3NF5BMl5BanBnXkFtZTcwMjk2NTc2Ng@@._V1_QL75_UX328_.jpg" alt="Drive">
+                        <div class="overlay">Drive</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://imgs.search.brave.com/HsIgJyJpBsZ9-_jhgUZkHIJ5MaSGeSrO918mGjUaPR4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZW9w/bGUuY29tL3RobWIv/RGdNajZ6WVVLRUI3/YVlPek5tS3MtdFE5/SkZRPS80MDAweDAv/ZmlsdGVyczpub191/cHNjYWxlKCk6bWF4/X2J5dGVzKDE1MDAw/MCk6c3RyaXBfaWNj/KCk6Zm9jYWwoNjI2/eDQ3Njo2Mjh4NDc4/KS9DcmF6eS1TdHVw/aWQtTG92ZS0wNzI5/MjYtMTQtMTY0YTUy/ODE2NWMzNGUxM2I3/MWYxNTY4ZDg3YmYy/NTAuanBn" alt="Crazy, Stupid, Love">
+                        <div class="overlay">Crazy, Stupid, Love</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://imgs.search.brave.com/yJhEpa82x3GdcEXH8BKiciz7dmUXYR7qvCgRfJbXv8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMwLnNyY2RuLmNv/bS93b3JkcHJlc3Mv/d3AtY29udGVudC91/cGxvYWRzLzIwMjIv/MTIvbGEtbGEtbGFu/ZC1lbmRpbmctZXhw/bGFpbmVkLWVtbWEt/c3RvbmUtcnlhbi1n/b3NsaW5nLmpwZz9x/PTQ5JmZpdD1jcm9w/Jnc9MzYwJmg9MjQw/JmRwcj0y" alt="La La Land">
+                        <div class="overlay">La La Land</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://imgs.search.brave.com/wzYTjO2O2QLaqCRHk2gL8iUvoX_J8eZY4yU2QNPqxF4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXQuY29t/L3cvZnVsbC9lL2Mv/Ny80ODYzMzUtMzg0/MHgyMTYwLWRlc2t0/b3AtNGstYmxhZGUt/cnVubmVyLTIwNDkt/d2FsbHBhcGVyLXBo/b3RvLmpwZw" alt="Blade Runner 2049">
+                        <div class="overlay">Blade Runner 2049</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://imgs.search.brave.com/P15A7M4-xg0VzPbTzCmjfSY5HiALmGN4Ws13IjlXzxo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmd1/aW0uY28udWsvaW1n/L21lZGlhLzEyZWZm/MWI2NWI0ODhlY2Nk/NTdiYzM1M2Q1YTNl/MTRlZGQ5OGRiMjMv/MF8wXzMwMDBfMTgw/MS9tYXN0ZXIvMzAw/MC5qcGc_d2lkdGg9/NDY1JmRwcj0xJnM9/bm9uZSZjcm9wPW5v/bmU" alt="The Big Short">
+                        <div class="overlay">The Big Short</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://imgs.search.brave.com/uj8Og4rePXXDpXrzcbPd5WJcZazG3pD9o2PEn1rAXoE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ldy5j/b20vdGhtYi9VUEl6/aUZqc1RNMG5ydTAy/WkhFWUpIQmpOWFk9/LzIwMDB4MC9maWx0/ZXJzOm5vX3Vwc2Nh/bGUoKTptYXhfYnl0/ZXMoMTUwMDAwKTpz/dHJpcF9pY2MoKS9C/YXJiaWUtS2VuLTZm/ZGQzNzM4Y2U0YzQw/ZWY5ZjdlZTZiZjI5/MWI0YmJlLmpwZw" alt="Barbie">
+                        <div class="overlay">Barbie</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://imgs.search.brave.com/xTKejoJ052s-H9u6PcENPnr2P7zQELK7jO-eqautzPI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL1Mv/YXBsdXMtbWVkaWEt/bGlicmFyeS1zZXJ2/aWNlLW1lZGlhL2Fi/MGFjY2JiLTc1YjIt/NDhmOS05NTkzLTM4/NzFkNzBmMmFmNC5f/X0NSMCwwLDk3MCwz/MDBfUFQwX1NYOTcw/X1YxX19fLmpwZw">
+                        <div class="overlay">The Fall Guy</div>
+                    </div>
+                </div>
+            </section>
+
 
     <div class="buttons-group" id="IMD|WIKI">
     <a class="btn-link" href="https://www.imdb.com/name/nm0331516/">IMDB</a>

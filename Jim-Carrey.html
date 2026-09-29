@@ -3,146 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jim Carrey - ActorsHub</title>
-
-    <link rel="stylesheet" href="style.css">
-
+    <title>Jim Carrey Actorshub</title>
+    <!-- Bootstrap 5 CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-    
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="page-wrapper"> 
-        <header class="main-header">
-            <div class="logo">ActorsHub</div>
-                <nav class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="Ryan-Gosling.html">Jim Carrey</a>
-                    <a href="pitt.html">Brad Pitt</a>
-                    <a href="statham.html">Jason Statham</a>
-                    <a href="antony_starr.html"> Antony Starr</a>
-                </nav>
-        </header>
+<body>  
+    <div class="container-fluid px-0">
+        <nav class="navbar navbar-expand-lg main-navbar px-4 py-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">ACTORSHUB</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Jim-Carrey.html">Jim Carrey</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pitt.html">Brad Pitt</a></li>
+                        <li class="nav-item"><a class="nav-link" href="statham.html">Jason Statham</a></li>
+                        <li class="nav-item"><a class="nav-link" href="antony_starr.html">Antony Starr</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="Ryan-Gosling.html">Ryan Gosling</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+        <div class="page-shell">
+            <div class="row g-0">
+                <!-- Sidebar -->
+                <aside class="col-12 col-lg-3 sidebar-area p-4">
+                    <h3 class="sidebar-title mb-5">Menu</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#biography">Biography</a></li>
+                        <li><a href="#popular-films">Popular films</a></li>
+                        <li><a href="#performances">Best Performances</a></li>
+                        <li><a href="#gallery">Photo Gallery</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                        <li><a href="#links">Links</a></li>
+                    </ul>
+                </aside>
+    
+                <!-- Main Content -->
+                <main class="col-12 col-lg-9 content-area p-4 p-lg-5">
+                    <section id="biography" class="hero-box mb-5">
+                        <div class="row g-4 align-items-stretch">
+                            <div class="col-12 col-lg-5">
+                                <img src="photos/Carrey1.jpg" alt="Ryan Gosling" class="actor-photo">
+                            </div>
+                            <div class="col-12 col-lg-5">
+                                <div class="bio-card">
+                                    <h1>Ryan Gosling</h1>
+                                        <p>James Eugene Carrey (born January 17, 1962) is a Canadian and American actor and comedian. Known primarily for his energetic slapstick performances, he is regarded as one of the most prominent comedic actors of his generation. He broke out as a film star after starring in a string of box office hits, such as Ace Ventura: Pet Detective, The Mask, Dumb and Dumber (all 1994), and Batman Forever (1995). </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-    <aside class="sidebar">
-        <h3>Menu</h3>
-            <ul>
-                <li><a href="#biography">Biography</a></li>
-                <li><a href="#facts">Facts</a></li>
-                <li><a href="#cards">Top Movies</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#links">Links</a></li>
-            </ul>
-    </aside>
+                    <!-- Section 2: Popular Films Table -->
+                    <section id="popular-films" class="mb-5">
+                        <h2 class="section-title">Popular Films</h2>
+                        <div class="table-wrap">
+                            <div class="table-responsive">
+                                <table class="table films-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Films</th>
+                                            <th>Role</th>
+                                            <th>Year</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>The Mask</td><td>Stanley Ipkiss</td><td>1994</td></tr>
+                                        <tr><td>Dumb and Dumber</td><td>Lloyd Christmas</td><td>1994</td></tr>
+                                        <tr><td>The Truman Show</td><td>Truman Burbank</td><td>1998</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+    
+                    <!-- Section 3: Best Performances Cards -->
+                    <section id="performances" class="mb-5">
+                        <h2 class="section-title">Best Performances</h2>
+                        <div class="cards-wrap p-3">
+                            <div class="row g-4">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card actor-card">
+                                        <img src="photos/Carrey_mask.png" class="card-img-top" alt="The Mask">
+                                        <div class="card-body d-flex flex-column">
+                                            <h4 class="card-title">The Mask (1994)</h4>
+                                            <p class="card-text">A timid bank clerk turns into a grinning superhero with wild abilities after finding a mask.</p>
+                                            <a href="https://www.imdb.com/title/tt0110475/" target="_blank" class="btn btn-primary mt-auto">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
 
-    <main id="carrey-page">
-    <div class="container">
-        <img src="photos/Carrey1.jpg" alt="Jim Carrey1" class="profile-img">
-        <div class="banner">
-            <div class="banner-inner" id="biography"> 
-                <h1>Jim Carrey</h1>
-                <p>James Eugene Carrey (born January 17, 1962) is a Canadian and American actor and comedian. 
-                    Known primarily for his energetic slapstick performances, he is regarded as one of the most prominent comedic actors of his generation. 
-                    He broke out as a film star after starring in a string of box office hits, such as Ace Ventura: Pet Detective, 
-                    The Mask, Dumb and Dumber (all 1994), Ace Ventura: When Nature Calls, and Batman Forever (both 1995). 
-                </p>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card actor-card">
+                                        <img src="photos/Carrey_dumb.png" class="card-img-top" alt="Dumb and Dumber">
+                                        <div class="card-body d-flex flex-column">
+                                            <h4 class="card-title">Dumb and Dumber</h4>
+                                            <p class="card-text">Two dimwitted friends embark on a cross-country trip to return a briefcase.</p>
+                                            <a href="https://www.imdb.com/title/tt0109686/" target="_blank" class="btn btn-outline-primary mt-auto">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card actor-card">
+                                        <img src="photos/Carrey_truman.jpg" class="card-img-top" alt="The Truman Show">
+                                        <div class="card-body d-flex flex-column">
+                                            <h4 class="card-title">The Truman Show</h4>
+                                            <p class="card-text">An insurance salesman discovers his entire life is actually a TV show.</p>
+                                            <a href="https://www.imdb.com/title/tt0120382/" target="_blank" class="btn btn-secondary mt-auto">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4: Bootstrap Carousel Gallery -->
+                    <section id="gallery" class="mb-5">
+                        <h2 class="section-title">Photo Gallery</h2>
+                        <div class="carousel-wrap p-3">
+                            <div id="carreyCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carreyCarousel" data-bs-slide-to="0" class="active"></button>
+                                    <button type="button" data-bs-target="#carreyCarousel" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#carreyCarousel" data-bs-slide-to="2"></button>
+                                    <button type="button" data-bs-target="#carreyCarousel" data-bs-slide-to="3"></button>
+                                    <button type="button" data-bs-target="#carreyCarousel" data-bs-slide-to="4"></button>
+                                    <button type="button" data-bs-target="#carreyCarousel" data-bs-slide-to="5"></button>
+                                    <button type="button" data-bs-target="#carreyCarousel" data-bs-slide-to="6"></button>
+                                    <button type="button" data-bs-target="#carreyCarousel" data-bs-slide-to="7"></button>
+                                    <button type="button" data-bs-target="#carreyCarousel" data-bs-slide-to="8"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="photos/Carrey_Ace.jpg" class="d-block w-100" alt="Ace Ventura">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Ace Ventura</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="photos/Carrey_mask2.jpg" class="d-block w-100" alt="The Mask">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">The Mask</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="photos/Carrey_dumb2.jpg" class="d-block w-100" alt="Dumb and Dumber">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Dumb and Dumber</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="photos/Carrey_liarliar.jpg" class="d-block w-100" alt="Liar Liar">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Liar Liar</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="photos/Carrey_truman2.jpg" class="d-block w-100" alt="The Truman Show">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">The Truman Show</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="photos/Carrey_moon.jpg" class="d-block w-100" alt="Man on the Moon">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Man on the Moon</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="photos/Carrey_almighty.jpg" class="d-block w-100" alt="Bruce Almighty">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Bruce Almighty</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="photos/Carrey_eternal.jpg" class="d-block w-100" alt="Eternal Sunshine">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Eternal Sunshine</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="photos/Carrey_Sonic.jpg" class="d-block w-100" alt="Sonic The Hedgehog">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Sonic The Hedgehog</h5></div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carreyCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carreyCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 5: Fan Feedback Form -->
+                    <section id="feedback" class="mb-5">
+                        <h2 class="section-title">Fan Feedback</h2>
+                        <div class="form-wrap">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Your name">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">@</span>
+                                            <input type="email" class="form-control" id="email" placeholder="example@email.com">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="movie" class="form-label">Favorite movie</label>
+                                        <select class="form-select" id="movie">
+                                            <option selected>Choose movie</option>
+                                            <option>The Mask</option>
+                                            <option>Dumb and Dumber</option>
+                                            <option>The Truman Show</option>
+                                            <option>Bruce Almighty</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="comment" class="form-label">Comment</label>
+                                        <textarea class="form-control" id="comment" rows="4" placeholder="Write your opinion..."></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary btn-lg">Send</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+        
+                    <!-- Section 6: Links -->
+                    <section id="links" class="mb-2">
+                        <h2 class="section-title">Links</h2>
+                        <div class="links-wrap">
+                            <div class="btn-group" role="group">
+                                <a href="https://www.imdb.com/name/nm0000120/" target="_blank" class="btn btn-primary">IMDB</a>
+                                <a href="https://en.wikipedia.org/wiki/Jim_Carrey" target="_blank" class="btn btn-outline-primary">Wikipedia</a>
+                                <a href="index.html" class="btn btn-secondary">Main Page</a>
+                            </div>
+                        </div>
+                    </section>
+                </main>
             </div>
         </div>
-
-        
-    </div>
-
-
-    <div class="banner-facts-inner" id="facts" style="margin-top: 20px;">
-        <h3>Interesting Facts about Jim Carrey</h3>
-        <ul id="facts-list">
-            <li>He was born in Newmarket, Ontario, Canada.</li>
-            <li>He has won 2 Golden Globe Awards.</li>
-            <li>He is known for his energetic slapstick performances.</li>
-            <li>He has received nominations for BAFTA Awards and Screen Actors Guild Awards.</li>
-        </ul>
-    </div>
-    
-    <section id="cards" style="margin-top: 40px;">
-                <h2>Featured Works</h2>
-                <div class="cards-container">
-                    <div class="card">
-                        <img src="photos/Carrey_mask.png" alt="The Mask">
-                        <h4>The Mask (1994)</h4>
-                        <p>A timid bank clerk turns into a grinning superhero with wild abilities after discovering a magical wooden mask.</p>
-                        <button onclick="window.open('https://www.imdb.com/title/tt0110475/', '_blank')">Read More</button>
-                    </div>
-                    <div class="card">
-                        <img src="photos/Carrey_dumb.png" alt="Dumb and Dumber">
-                        <h4>Dumb and Dumber (1994)</h4>
-                        <p>Two well-meaning but incredibly dimwitted friends embark on a cross-country trip to return a briefcase.</p>
-                        <button onclick="window.open('https://www.imdb.com/title/tt0109686/', '_blank')">Read More</button>
-                    </div>
-                    <div class="card">
-                        <img src="photos/Carrey_truman.jpg" alt="The Truman Show">
-                        <h4>The Truman Show (1998)</h4>
-                        <p>An insurance salesman discovers his entire life is actually a seamlessly orchestrated reality television show.</p>
-                        <button onclick="window.open('https://www.imdb.com/title/tt0120382/', '_blank')">Read More</button>
-                    </div>
-                </div>
-            </section>
-
-    <section class="gallery-section" id="gallery">
-                <h2>Photo Gallery</h2>
-                <div class="grid-gallery">
-                    <div class="gallery-item">
-                        <img src="photos/Carrey_Ace.jpg" alt="Ace Ventura">
-                        <div class="overlay">Ace Ventura</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="photos/Carrey_mask2.jpg" alt="The Mask">
-                        <div class="overlay">The Mask</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="photos/Carrey_dumb2.jpg" alt="Dumb and Dumber">
-                        <div class="overlay">Dumb and Dumber</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="photos/Carrey_liarliar.jpg" alt="Liar Liar">
-                        <div class="overlay">Liar Liar</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="photos/Carrey_truman2.jpg" alt="The Truman Show">
-                        <div class="overlay">The Truman Show</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="photos/Carrey_moon.jpg" alt="Man on the Moon">
-                        <div class="overlay">Man on the Moon</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="photos/Carrey_almighty.jpg" alt="Bruce Almighty">
-                        <div class="overlay">Bruce Almighty</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="photos/Carrey_eternal.jpg" alt="Eternal Sunshine">
-                        <div class="overlay">Eternal Sunshine</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="photos/Carrey_Sonic.jpg" alt="Sonic The Hedgehog">
-                        <div class="overlay">Sonic The Hedgehog</div>
-                    </div>
-                </div>
-            </section>
-
-        
-        <div class="buttons-group">
-        <a class="btn-link" href="https://www.imdb.com/name/nm0000120/">IMDB</a>
-        <a class="btn-link" href="https://en.wikipedia.org/wiki/Jim_Carrey">Wikipedia</a>
-        <a class="btn-link" href="index.html">Main page</a>
-        </div>
-    </main>
-    </div>
-
+        <!-- Footer -->
         <footer class="footer-banner">
             <p>Created by: Murodyan Mansur, Kairbek Agzam, Korostylev Dimitry. SE-2513 group. Team "ъ"</p>
             <p>Date: 08 September 2025</p>
         </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

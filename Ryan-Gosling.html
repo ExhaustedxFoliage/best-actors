@@ -4,167 +4,253 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan Gosling Actorshub</title>
-
-    <link rel="stylesheet" href="style.css">
-
+    <!-- Bootstrap 5 CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
- 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>  
-    <div class="page-wrapper"> 
-        <header class="main-header">
-            <div class="logo">ActorsHub</div>
-                <nav class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="Jim-Carrey.html">Jim Carrey</a>
-                    <a href="pitt.html">Brad Pitt</a>
-                    <a href="statham.html">Jason Statham</a>
-                    <a href="antony_starr.html"> Antony Starr</a>
-                </nav>
-        </header>
+    <div class="container-fluid px-0">
+        <nav class="navbar navbar-expand-lg main-navbar px-4 py-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">ACTORSHUB</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Jim-Carrey.html">Jim Carrey</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pitt.html">Brad Pitt</a></li>
+                        <li class="nav-item"><a class="nav-link" href="statham.html">Jason Statham</a></li>
+                        <li class="nav-item"><a class="nav-link" href="antony_starr.html">Antony Starr</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="Ryan-Gosling.html">Ryan Gosling</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-    <aside class="sidebar">
-        <h3>Menu</h3>
-            <ul>
-                <li><a href="#biography">Biography</a></li>
-                <li><a href="#popular_films">Popular films</a></li>
-                <li><a href="#gallery">Photo Gallery</a></li>
-                <li><a href="#IMD|WIKI">IMD | WIKI </a></li>
-                <li><a href="#links">Links</a></li>
-            </ul>
-    </aside>
+        <div class="page-shell">
+            <div class="row g-0">
+                <!-- Sidebar -->
+                <aside class="col-12 col-lg-3 sidebar-area p-4">
+                    <h3 class="sidebar-title mb-5">Menu</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="#biography">Biography</a></li>
+                        <li><a href="#popular-films">Popular films</a></li>
+                        <li><a href="#performances">Best Performances</a></li>
+                        <li><a href="#gallery">Photo Gallery</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                        <li><a href="#links">Links</a></li>
+                    </ul>
+                </aside>
 
-    <main id="gosling-page">
-    <div class="container">
-        
-        <img src="photos/Gosling.png" alt="Ryan Gosling" class="profile-img">
+                <!-- Main Content -->
+                <main class="col-12 col-lg-9 content-area p-4 p-lg-5">
+                    <section id="biography" class="hero-box mb-5">
+                        <div class="row g-4 align-items-stretch">
+                            <div class="col-12 col-lg-5">
+                                <img src="photos/Gosling.png" alt="Ryan Gosling" class="actor-photo">
+                            </div>
+                            <div class="col-12 col-lg-5">
+                                <div class="bio-card">
+                                    <h1>Ryan Gosling</h1>
+                                        <p>Ryan Thomas Gosling is a Canadian actor born on November 12, 1980, in London, Ontario. He began his career as a child star on Disney Channel’s The All New Mickey Mouse Club (1993–1995) before transitioning to film with roles in The Notebook (2004) and Half Nelson (2006). His other notable films include Drive, Blade Runner 2049, and The Big Short.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-        <div class="banner">
-            <div class="banner-inner" id="biography"> 
-                <h1>Ryan Gosling</h1>
-                <p>Ryan Thomas Gosling is a Canadian actor born on November 12, 1980, in London, Ontario. 
-                    <br> He began his career as a child star on Disney Channel’s 
-                    The All New Mickey Mouse Club (1993–1995)
-                     before transitioning to film with roles in The Notebook (2004)
-                     and Half Nelson (2006).
-                      His other notable films include Drive, Blade Runner 2049, and The Big Short. 
-                       He has been in a long-term partnership with actress Eva Mendes since 2011, and they have two children together.
-                </p>
+                    <section id="popular-films" class="mb-5">
+                        <h2 class="section-title">Popular Films</h2>
+                        <div class="table-wrap">
+                            <div class="table-responsive">
+                                <table class="table films-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Films</th>
+                                            <th>Role</th>
+                                            <th>Year</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Drive</td><td>Sean Gunn</td><td>2011</td></tr>
+                                        <tr><td>La La Land</td><td>Sebastian Wilder</td><td>2016</td></tr>
+                                        <tr><td>Barbie</td><td>Ken</td><td>2023</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="performances" class="mb-5">
+                        <h2 class="section-title">Best Performances</h2>
+                        <div class="cards-wrap p-3">
+                            <div class="row g-4">
+                                <!-- CARD 1 -->
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card actor-card">
+                                        <img src="https://static0.colliderimages.com/wordpress/wp-content/uploads/2021/09/DRIVE.jpg?q=70&fit=crop&w=1232&h=693&dpr=1" class="card-img-top" alt="Drive">
+                                        <div class="card-body d-flex flex-column">
+                                            <h4 class="card-title">Drive (2011)</h4>
+                                            <p class="card-text">A mysterious Hollywood stuntman and getaway driver gets into trouble.</p>
+                                            <a href="https://www.imdb.com/title/tt0780504/" target="_blank" class="btn btn-primary mt-auto">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CARD 2 -->
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card actor-card">
+                                        <img src="https://wallpaperaccess.com/full/184724.jpg" class="card-img-top" alt="La la land">
+                                        <div class="card-body d-flex flex-column">
+                                            <h4 class="card-title">La La Land (2016)</h4>
+                                            <p class="card-text">A pianist and an actress fall in love while attempting to reconcile their aspirations.</p>
+                                            <a href="https://www.imdb.com/title/tt3783958/" target="_blank" class="btn btn-primary mt-auto">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <!-- CARD 3 -->
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card actor-card">
+                                        <img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2017/05/Ryan-Gosling-from-the-Blade-Runner-2049-poster.jpg?q=50&fit=crop&w=360&h=240&dpr=1.5" class="card-img-top" alt="La la land">
+                                        <div class="card-body d-flex flex-column">
+                                            <h4 class="card-title">Blade Runner 2049 (2017)</h4>
+                                            <p class="card-text">Discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard.</p>
+                                            <a href="https://www.imdb.com/title/tt1856101/" target="_blank" class="btn btn-primary mt-auto">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- .row -->
+                        </div> <!-- .cards-wrap -->
+                    </section>
+
+                    <section id="gallery" class="mb-5">
+                        <h2 class="section-title">Photo Gallery</h2>
+                        <div class="carousel-wrap p-3">
+                    <div id="goslingCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                    <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="2"></button>
+                                    <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="3"></button>
+                                    <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="4"></button>
+                                    <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="5"></button>
+                                    <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="6"></button>
+                                    <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="7"></button>
+                                    <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="8"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://m.media-amazon.com/images/M/MV5BMjA0NTI1OTY3NF5BMl5BanBnXkFtZTcwMjk2NTc2Ng@@._V1_QL75_UX328_.jpg" class="d-block w-100" alt="Drive">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Drive</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://wallpaperaccess.com/full/184724.jpg" class="d-block w-100" alt="La La Land">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">La La Land</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2017/05/Ryan-Gosling-from-the-Blade-Runner-2049-poster.jpg" class="d-block w-100" alt="Blade Runner 2049">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Blade Runner 2049</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://m.media-amazon.com/images/M/MV5BN2U3MWQwMTktZmIyMy00ZTY5LTk4ZjEtYTAwMTViMzk0OGJjXkEyXkFqcGc@._V1_QL75_UX329_.jpg" class="d-block w-100" alt="Half Nelson">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Half Nelson</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://imgs.search.brave.com/HsIgJyJpBsZ9-_jhgUZkHIJ5MaSGeSrO918mGjUaPR4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZW9w/bGUuY29tL3RobWIv/RGdNajZ6WVVLRUI3/YVlPek5tS3MtdFE5/SkZRPS80MDAweDAv/ZmlsdGVyczpub191/cHNjYWxlKCk6bWF4/X2J5dGVzKDE1MDAw/MCk6c3RyaXBfaWNj/KCk6Zm9jYWwoNjI2/eDQ3Njo2Mjh4NDc4/KS9DcmF6eS1TdHVw/aWQtTG92ZS0wNzI5/MjYtMTQtMTY0YTUy/ODE2NWMzNGUxM2I3/MWYxNTY4ZDg3YmYy/NTAuanBn" class="d-block w-100" alt="Crazy, Stupid, Love">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Crazy, Stupid, Love</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://imgs.search.brave.com/P15A7M4-xg0VzPbTzCmjfSY5HiALmGN4Ws13IjlXzxo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmd1/aW0uY28udWsvaW1n/L21lZGlhLzEyZWZm/MWI2NWI0ODhlY2Nk/NTdiYzM1M2Q1YTNl/MTRlZGQ5OGRiMjMv/MF8wXzMwMDBfMTgw/MS9tYXN0ZXIvMzAw/MC5qcGc_d2lkdGg9/NDY1JmRwcj0xJnM9/bm9uZSZjcm9wPW5v/bmU" class="d-block w-100" alt="The Big Short">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">The Big Short</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://imgs.search.brave.com/uj8Og4rePXXDpXrzcbPd5WJcZazG3pD9o2PEn1rAXoE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ldy5j/b20vdGhtYi9VUEl6/aUZqc1RNMG5ydTAy/WkhFWUpIQmpOWFk9/LzIwMDB4MC9maWx0/ZXJzOm5vX3Vwc2Nh/bGUoKTptYXhfYnl0/ZXMoMTUwMDAwKTpz/dHJpcF_pY2MoKS9C/YXJiaWUtS2VuLTZm/ZGQzNzM4Y2U0YzQw/ZWY5ZjdlZTZiZjI5/MWI0YmJlLmpwZw" class="d-block w-100" alt="Barbie">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Barbie</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://imgs.search.brave.com/xTKejoJ052s-H9u6PcENPnr2P7zQELK7jO-eqautzPI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL1Mv/YXBsdXMtbWVkaWEt/bGlicmFyeS1zZXJ2/aWNlLW1lZGlhL2Fi/MGFjY2JiLTc1YjIt/NDhmOS05NTkzLTM4/NzFkNzBmMmFmNC5f/X0NSMCwwLDk3MCwz/MDBfUFQwX1NYOTcw/X1YxX19fLmpwZw" class="d-block w-100" alt="The Fall Guy">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">The Fall Guy</h5></div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="photos/Gosling.png" class="d-block w-100" alt="Ryan Gosling">
+                                        <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Ryan Gosling</h5></div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#goslingCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#goslingCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="feedback" class="mb-5">
+                        <h2 class="section-title">Fan Feedback</h2>
+                        <div class="form-wrap">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Your name">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">@</span>
+                                            <input type="email" class="form-control" id="email" placeholder="example@email.com">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="movie" class="form-label">Favorite movie</label>
+                                        <select class="form-select" id="movie">
+                                            <option selected>Choose movie</option>
+                                            <option>Drive</option>
+                                            <option>La La Land</option>
+                                            <option>Blade Runner 2049</option>
+                                            <option>Barbie</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="comment" class="form-label">Comment</label>
+                                        <textarea class="form-control" id="comment" rows="4" placeholder="Write your opinion..."></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary btn-lg">Send</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+                    <section id="links" class="mb-2">
+                        <h2 class="section-title">Links</h2>
+                        <div class="links-wrap">
+                            <div class="btn-group" role="group">
+                                <a href="https://www.imdb.com/name/nm0331516/" target="_blank" class="btn btn-primary">IMDB</a>
+                                <a href="https://en.wikipedia.org/wiki/Ryan_Gosling" target="_blank" class="btn btn-outline-primary">Wikipedia</a>
+                                <a href="index.html" class="btn btn-secondary">Main Page</a>
+                            </div>
+                        </div>
+                    </section>
+                </main>
             </div>
         </div>
+
+        <footer class="footer-banner">
+            <p>Created by: Murodyan Mansur, Kairbek Agzam, Korostylev Dimitry. SE-2513 group. Team "ъ"</p>
+            <p>Date: 08 September 2025</p>
+        </footer>
     </div>
 
-
-    <div class="table-container" id="popular_films">
-        <table>
-            <thead> 
-                <tr>
-                    <th>Films</th>
-                    <th>Role</th>
-                    <th>Year</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Drive</td>
-                    <td>Sean Gunn</td>
-                    <td>2011</td>
-                </tr>
-                <tr>
-                    <td>La La Land</td>
-                    <td>Sebastian Wilder</td>
-                    <td>2016</td>
-                </tr>
-                <tr>
-                    <td>Barbie</td>
-                    <td>Ryan Gosling</td>
-                    <td>2023</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <section id="cards" style="margin-top: 40px;">
-                <h2>Best Performances</h2>
-                <div class="cards-container">
-                    <div class="card">
-                        <img src="https://static0.colliderimages.com/wordpress/wp-content/uploads/2021/09/DRIVE.jpg?q=70&fit=crop&w=1232&h=693&dpr=1" alt="Drive">
-                        <h4>Drive (2011)</h4>
-                        <p>A mysterious Hollywood stuntman and getaway driver gets into trouble when he helps his neighbor.</p>
-                        <button onclick="window.open('https://www.imdb.com/title/tt0780504/', '_blank')">Read More</button>
-                    </div>
-                    <div class="card">
-                        <img src="https://wallpaperaccess.com/full/184724.jpg" alt="La La Land">
-                        <h4>La La Land (2016)</h4>
-                        <p>While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations.</p>
-                        <button onclick="window.open('https://www.imdb.com/title/tt3783958/', '_blank')">Read More</button>
-                    </div>
-                    <div class="card">
-                        <img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2017/05/Ryan-Gosling-from-the-Blade-Runner-2049-poster.jpg?q=50&fit=crop&w=360&h=240&dpr=1.5" alt="Blade Runner 2049">
-                        <h4>Blade Runner 2049 (2017)</h4>
-                        <p>Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard.</p>
-                        <button onclick="window.open('https://www.imdb.com/title/tt1856101/', '_blank')">Read More</button>
-                    </div>
-                </div>
-    </section>
-
-    <section class="gallery-section" id="gallery">
-                <h2>Photo Gallery</h2>
-                <div class="grid-gallery">
-                    <div class="gallery-item">
-                        <img src="https://imgs.search.brave.com/DeTV6ktRGS0wldK0VSCOuMCuF9Ymm3_rX41G22gRNw0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMwLmNvbGxpZGVy/aW1hZ2VzLmNvbS93/b3JkcHJlc3Mvd3At/Y29udGVudC91cGxv/YWRzLzIwMjMvMDcv/dGhlLW5vdGVib29r/LW1jYWRhbXMtZ29z/bGluZy5wbmc_cT03/MCZmaXQ9Y3JvcCZ3/PTgyNSZkcHI9MQ" alt="The Notebook">
-                        <div class="overlay">The Notebook</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://m.media-amazon.com/images/M/MV5BN2U3MWQwMTktZmIyMy00ZTY5LTk4ZjEtYTAwMTViMzk0OGJjXkEyXkFqcGc@._V1_QL75_UX329_.jpg" alt="Half Nelson">
-                        <div class="overlay">Half Nelson</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMjA0NTI1OTY3NF5BMl5BanBnXkFtZTcwMjk2NTc2Ng@@._V1_QL75_UX328_.jpg" alt="Drive">
-                        <div class="overlay">Drive</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://imgs.search.brave.com/HsIgJyJpBsZ9-_jhgUZkHIJ5MaSGeSrO918mGjUaPR4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZW9w/bGUuY29tL3RobWIv/RGdNajZ6WVVLRUI3/YVlPek5tS3MtdFE5/SkZRPS80MDAweDAv/ZmlsdGVyczpub191/cHNjYWxlKCk6bWF4/X2J5dGVzKDE1MDAw/MCk6c3RyaXBfaWNj/KCk6Zm9jYWwoNjI2/eDQ3Njo2Mjh4NDc4/KS9DcmF6eS1TdHVw/aWQtTG92ZS0wNzI5/MjYtMTQtMTY0YTUy/ODE2NWMzNGUxM2I3/MWYxNTY4ZDg3YmYy/NTAuanBn" alt="Crazy, Stupid, Love">
-                        <div class="overlay">Crazy, Stupid, Love</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://imgs.search.brave.com/yJhEpa82x3GdcEXH8BKiciz7dmUXYR7qvCgRfJbXv8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMwLnNyY2RuLmNv/bS93b3JkcHJlc3Mv/d3AtY29udGVudC91/cGxvYWRzLzIwMjIv/MTIvbGEtbGEtbGFu/ZC1lbmRpbmctZXhw/bGFpbmVkLWVtbWEt/c3RvbmUtcnlhbi1n/b3NsaW5nLmpwZz9x/PTQ5JmZpdD1jcm9w/Jnc9MzYwJmg9MjQw/JmRwcj0y" alt="La La Land">
-                        <div class="overlay">La La Land</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://imgs.search.brave.com/wzYTjO2O2QLaqCRHk2gL8iUvoX_J8eZY4yU2QNPqxF4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXQuY29t/L3cvZnVsbC9lL2Mv/Ny80ODYzMzUtMzg0/MHgyMTYwLWRlc2t0/b3AtNGstYmxhZGUt/cnVubmVyLTIwNDkt/d2FsbHBhcGVyLXBo/b3RvLmpwZw" alt="Blade Runner 2049">
-                        <div class="overlay">Blade Runner 2049</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://imgs.search.brave.com/P15A7M4-xg0VzPbTzCmjfSY5HiALmGN4Ws13IjlXzxo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmd1/aW0uY28udWsvaW1n/L21lZGlhLzEyZWZm/MWI2NWI0ODhlY2Nk/NTdiYzM1M2Q1YTNl/MTRlZGQ5OGRiMjMv/MF8wXzMwMDBfMTgw/MS9tYXN0ZXIvMzAw/MC5qcGc_d2lkdGg9/NDY1JmRwcj0xJnM9/bm9uZSZjcm9wPW5v/bmU" alt="The Big Short">
-                        <div class="overlay">The Big Short</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://imgs.search.brave.com/uj8Og4rePXXDpXrzcbPd5WJcZazG3pD9o2PEn1rAXoE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ldy5j/b20vdGhtYi9VUEl6/aUZqc1RNMG5ydTAy/WkhFWUpIQmpOWFk9/LzIwMDB4MC9maWx0/ZXJzOm5vX3Vwc2Nh/bGUoKTptYXhfYnl0/ZXMoMTUwMDAwKTpz/dHJpcF9pY2MoKS9C/YXJiaWUtS2VuLTZm/ZGQzNzM4Y2U0YzQw/ZWY5ZjdlZTZiZjI5/MWI0YmJlLmpwZw" alt="Barbie">
-                        <div class="overlay">Barbie</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://imgs.search.brave.com/xTKejoJ052s-H9u6PcENPnr2P7zQELK7jO-eqautzPI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL1Mv/YXBsdXMtbWVkaWEt/bGlicmFyeS1zZXJ2/aWNlLW1lZGlhL2Fi/MGFjY2JiLTc1YjIt/NDhmOS05NTkzLTM4/NzFkNzBmMmFmNC5f/X0NSMCwwLDk3MCwz/MDBfUFQwX1NYOTcw/X1YxX19fLmpwZw">
-                        <div class="overlay">The Fall Guy</div>
-                    </div>
-                </div>
-            </section>
-
-
-    <div class="buttons-group" id="IMD|WIKI">
-    <a class="btn-link" href="https://www.imdb.com/name/nm0331516/">IMDB</a>
-    <a class="btn-link" href="https://en.wikipedia.org/wiki/Ryan_Gosling">Wikipedia</a>
-    <a class="btn-link" href="index.html">Main page</a>
-    </div>
-    </div>
-
-    </main>
-    <footer class="footer-banner">
-        <p>Created by: Murodyan Mansur, Kairbek Agzam, Korostylev Dimitry. SE-2513 group. Team "ъ"</p>
-        <p>Date: 08 September 2025</p>
-    </footer>
-    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

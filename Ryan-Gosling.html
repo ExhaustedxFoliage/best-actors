@@ -30,6 +30,12 @@
                         <li class="nav-item"><a class="nav-link active" href="Ryan-Gosling.html">Ryan Gosling</a></li>
                     </ul>
                 </div>
+
+                <div class="mb-4 text-light p-3 bg-dark rounded">
+                    <small id="datetime-display" class="d-block fw-bold mb-2">Загрузка даты и времени...</small>
+                    <button id="theme-toggle-btn" class="btn btn-sm btn-outline-warning w-100">Change Background</button>
+                    <button id="open-popup-btn" class="btn btn-sm btn-success w-100 mt-2">Subscribe / Contact Us</button>
+                </div>
             </div>
         </nav>
 
@@ -123,7 +129,7 @@
                                             <p class="card-text">Discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard.</p>
                                             <a href="https://www.imdb.com/title/tt1856101/" target="_blank" class="btn btn-primary mt-auto">Read More</a>
                                         </div>
-                                    </div>
+        l                            </div>
                                 </div>
                             </div> <!-- .row -->
                         </div> <!-- .cards-wrap -->
@@ -133,6 +139,7 @@
                         <h2 class="section-title">Photo Gallery</h2>
                         <div class="carousel-wrap p-3">
                     <div id="goslingCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <!-- indicators -->
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
                                     <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="1"></button>
@@ -144,9 +151,11 @@
                                     <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="7"></button>
                                     <button type="button" data-bs-target="#goslingCarousel" data-bs-slide-to="8"></button>
                                 </div>
+
+                                <!-- inner-->
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="https://m.media-amazon.com/images/M/MV5BMjA0NTI1OTY3NF5BMl5BanBnXkFtZTcwMjk2NTc2Ng@@._V1_QL75_UX328_.jpg" class="d-block w-100" alt="Drive">
+                                        <img src="https://spoilertown.com/wp-content/uploads/2024/09/drive-2011.webp" class="d-block w-100" alt="Drive">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Drive</h5></div>
                                     </div>
                                     <div class="carousel-item">
@@ -158,7 +167,7 @@
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Blade Runner 2049</h5></div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="https://m.media-amazon.com/images/M/MV5BN2U3MWQwMTktZmIyMy00ZTY5LTk4ZjEtYTAwMTViMzk0OGJjXkEyXkFqcGc@._V1_QL75_UX329_.jpg" class="d-block w-100" alt="Half Nelson">
+                                        <img src="https://bgn2018media.s3.amazonaws.com/wp-content/uploads/2013/04/27172628/p162548_i_h10_ac.jpg" class="d-block w-100" alt="Half Nelson">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Half Nelson</h5></div>
                                     </div>
                                     <div class="carousel-item">
@@ -170,7 +179,7 @@
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">The Big Short</h5></div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="https://imgs.search.brave.com/uj8Og4rePXXDpXrzcbPd5WJcZazG3pD9o2PEn1rAXoE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ldy5j/b20vdGhtYi9VUEl6/aUZqc1RNMG5ydTAy/WkhFWUpIQmpOWFk9/LzIwMDB4MC9maWx0/ZXJzOm5vX3Vwc2Nh/bGUoKTptYXhfYnl0/ZXMoMTUwMDAwKTpz/dHJpcF_pY2MoKS9C/YXJiaWUtS2VuLTZm/ZGQzNzM4Y2U0YzQw/ZWY5ZjdlZTZiZjI5/MWI0YmJlLmpwZw" class="d-block w-100" alt="Barbie">
+                                        <img src="https://i.guim.co.uk/img/media/5f1b6553716c2ada1e0ea865d7d1eff512552865/66_0_2868_1721/master/2868.jpg?width=620&dpr=1&s=none&crop=none" class="d-block w-100" alt="Barbie">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Barbie</h5></div>
                                     </div>
                                     <div class="carousel-item">
@@ -182,6 +191,8 @@
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Ryan Gosling</h5></div>
                                     </div>
                                 </div>
+
+                                <!-- control -->
                                 <button class="carousel-control-prev" type="button" data-bs-target="#goslingCarousel" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 </button>
@@ -252,5 +263,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

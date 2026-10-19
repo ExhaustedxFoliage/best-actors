@@ -30,6 +30,12 @@
                         <li class="nav-item"><a class="nav-link active" href="Ryan-Gosling.html">Ryan Gosling</a></li>
                     </ul>
                 </div>
+
+                <div class="ms-lg-3 text-light p-2 bg-dark rounded border border-secondary text-end">
+                    <small id="datetime-display" class="d-block fw-bold mb-1 text-warning">Loading date & time...</small>
+                    <button id="theme-toggle-btn" class="btn btn-sm btn-outline-warning w-100 mb-1">Change Background</button>
+                    <button id="open-popup-btn" class="btn btn-sm btn-success w-100">Subscribe / Contact Us</button>
+                </div>
             </div>
         </nav>
     
@@ -123,6 +129,29 @@
                                             <a href="https://www.imdb.com/title/tt0120382/" target="_blank" class="btn btn-secondary mt-auto">Read More</a>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Task 2: Accordion for FAQs -->
+                    <section id="faq-section" class="mb-5">
+                        <h2 class="section-title">FAQ & Information</h2>
+                        <div class="accordion-custom">
+                            <div class="accordion-item-custom mb-2">
+                                <div class="accordion-header-custom p-3 bg-light border rounded fw-bold" style="cursor: pointer;">
+                                    <p>▶ What are Jim Carrey's most famous nomination?</p>
+                                </div>
+                                <div class="accordion-body-custom p-3 border-start border-end border-bottom bg-white" style="display: none;">
+                                    <p> He is the only actor to win Golden Globe Awards in both the Musical/Comedy and Drama categories, and he holds the record for the most MTV Movie Awards won by a single individual. </p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-custom mb-2">
+                                <div class="accordion-header-custom p-3 bg-light border rounded fw-bold" style="cursor: pointer;">
+                                    <p>▶ Who is Jim Carrey's lifelong friend?</p>
+                                </div>
+                                <div class="accordion-body-custom p-3 border-start border-end border-bottom bg-white" style="display: none;">
+                                    <p>Carrey is a lifelong friend of the late rapper Tupac Shakur, with whom he exchanged letters while Tupac was incarcerated</p>
                                 </div>
                             </div>
                         </div>
@@ -252,7 +281,25 @@
         </footer>
     </div>
 
+    <!-- Task 3: Popup Modal Structure -->
+    <div id="popup-modal" class="custom-popup-overlay" style="display: none;">
+        <div class="custom-popup-content bg-white p-4 rounded shadow position-relative" style="width: 400px; max-width: 90%;">
+            <button id="close-popup-btn" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"></button>
+            <h3 class="mb-3">Subscribe to Updates</h3>
+            <p class="text-muted">Get the latest news about Ryan Gosling movies and projects.</p>
+            <form>
+                <div class="mb-3">
+                    <label for="popup-email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="popup-email" placeholder="name@example.com">
+                </div>
+                <button type="button" class="btn btn-success w-100" onclick="alert('Subscribed successfully!'); document.getElementById('popup-modal').style.display='none';">Subscribe</button>
+            </form>
+        </div>
+    </div>    
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="Murodyan_Mansur_asgn4.js"></script>
 </body>
 </html>

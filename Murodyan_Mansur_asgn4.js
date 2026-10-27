@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const themeBtn = document.getElementById('theme-toggle-btn');
     if (themeBtn) {
-        const colors = ['#121212', '#1a1d20', '#0d1b2a', '#1f2421', '#2b1b17', '#6482F2'];
+        const colors = ['#cfe0f1', '#f3e8d8', '#e0eee5', '#eee4f2', '#ececec'];
         let colorIndex = 0;
 
         themeBtn.addEventListener('click', () => {

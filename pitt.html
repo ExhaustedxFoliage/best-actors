@@ -10,8 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="actors-interactions.css">
+    <link rel="stylesheet" href="actors-assignment5.css">
 </head>
-<body class="actor-interactive-page">
+<body class="actor-interactive-page" data-actor="pitt" data-actor-name="Brad Pitt">
     <div class="container-fluid px-0">
         <nav class="navbar navbar-expand-lg main-navbar px-4 py-3">
             <div class="container-fluid">
@@ -23,7 +24,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="Jim-Carrey.html">Jim Carrey</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="pitt.html">Brad Pitt</a></li>
+                        <li class="nav-item"><a aria-current="page" class="nav-link active" href="pitt.html">Brad Pitt</a></li>
                         <li class="nav-item"><a class="nav-link" href="statham.html">Jason Statham</a></li>
                         <li class="nav-item"><a class="nav-link" href="antony_starr.html">Antony Starr</a></li>
                         <li class="nav-item"><a class="nav-link" href="Ryan-Gosling.html">Ryan Gosling</a></li>
@@ -38,7 +39,7 @@
                     <h3 class="sidebar-title mb-5">Menu</h3>
                     <ul class="sidebar-menu">
                         <li><a href="#biography">Biography</a></li>
-                        <li><a href="#popular-films">Popular films</a></li>
+                        <li><a href="#popular-films">Movie Explorer</a></li>
                         <li><a href="#performances">Best Performances</a></li>
                         <li><a href="#gallery">Photo Gallery</a></li>
                         <li><a href="#faq">FAQ</a></li>
@@ -55,8 +56,12 @@
                             <time id="actor-date-time">Enable JavaScript to see the current time.</time>
                         </div>
                         <div class="actor-tool-actions">
+                            <button type="button" id="change-text" class="btn btn-outline-primary" aria-pressed="false">Change text</button>
+                            <button type="button" id="actor-theme-toggle" class="btn btn-outline-primary" aria-pressed="false">Use night theme</button>
+                            <button type="button" id="actor-play-sound" class="btn btn-outline-primary" aria-describedby="sound-status">Play sound</button>
                             <button type="button" id="change-background" class="btn btn-outline-primary">Change background</button>
                             <span id="background-status" role="status">Background: Blue</span>
+                            <p id="sound-status" class="actor-sound-line" role="status">Sound plays only when you press Play sound.</p>
                         </div>
                     </div>
 
@@ -69,30 +74,28 @@
                                 <div class="bio-card">
                                     <h1>Brad Pitt</h1>
                                     <p>William Bradley Pitt is an outstanding American actor and film producer born on December 18, 1963. He began his career in the late 1980s and quickly gained worldwide popularity thanks to striking roles in cult films such as Fight Club, Seven, and Interview with the Vampire. Over his long career, Pitt has received numerous prestigious awards, including two Academy Awards.</p>
+                                    <p id="actor-more-biography" hidden></p>
+                                    <button type="button" id="actor-read-more" class="btn btn-outline-primary" aria-expanded="false" aria-controls="actor-more-biography">Read more</button>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    <section id="popular-films" class="mb-5">
-                        <h2 class="section-title">Popular Films</h2>
-                        <div class="table-wrap">
-                            <div class="table-responsive">
-                                <table class="table films-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Films</th>
-                                            <th>Role</th>
-                                            <th>Year</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr><td>Fight Club</td><td>Tyler Durden</td><td>1999</td></tr>
-                                        <tr><td>Ocean's Eleven</td><td>Rusty Ryan</td><td>2001</td></tr>
-                                        <tr><td>Once Upon a Time in Hollywood</td><td>Cliff Booth</td><td>2019</td></tr>
-                                    </tbody>
-                                </table>
+                    <section id="popular-films" class="mb-5" aria-labelledby="movie-explorer-title">
+                        <h2 id="movie-explorer-title" class="section-title">Movie Explorer</h2>
+                        <div class="movie-explorer">
+                            <label for="movie-search" class="movie-search-label">Find a film</label>
+                            <input id="movie-search" type="search" class="form-control" placeholder="Search by movie title" maxlength="100" aria-controls="movie-results">
+                            <div class="movie-filters" role="group" aria-label="Filter films by release period">
+                                <button type="button" class="btn btn-outline-primary" data-movie-filter="all" aria-pressed="true">All films</button>
+                                <button type="button" class="btn btn-outline-primary" data-movie-filter="classic" aria-pressed="false">Before 2010</button>
+                                <button type="button" class="btn btn-outline-primary" data-movie-filter="modern" aria-pressed="false">2010 and later</button>
                             </div>
+                            <p id="movie-status" role="status">Enable JavaScript to explore and rate the films.</p>
+                            <ul id="movie-results" class="actor-film-list" aria-label="Matching films"></ul>
+                            <button type="button" id="clear-ratings" class="btn btn-outline-primary">Clear ratings</button>
+                            <p id="rating-status" role="status"></p>
+                            <p class="actor-rating-note">Your ratings are kept until you reload this page.</p>
                         </div>
                     </section>
 
@@ -227,39 +230,48 @@
                         <h2 class="section-title">Fan Feedback</h2>
                         <div class="form-wrap">
                             <form id="actor-feedback-form">
-                                <div class="row g-3">
-                                    <div class="col-12 col-md-6">
-                                        <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" autocomplete="name" maxlength="100" required aria-describedby="name-error" placeholder="Your name">
-                                        <div id="name-error" class="actor-field-error" aria-live="polite"></div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <label for="email" class="form-label">Email</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text">@</span>
-                                            <input type="email" class="form-control" id="email" name="email" autocomplete="email" maxlength="254" required aria-describedby="email-error" placeholder="example@email.com">
+                                <p data-step-status role="status">Complete the form below.</p>
+                                <fieldset class="actor-form-step" data-form-step>
+                                    <legend>Contact details</legend>
+                                    <div class="row g-3">
+                                        <div class="col-12 col-md-6">
+                                            <label for="name" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="name" name="name" autocomplete="name" minlength="3" maxlength="15" required aria-describedby="name-error" placeholder="Your name">
+                                            <div id="name-error" class="actor-field-error" aria-live="polite"></div>
                                         </div>
-                                        <div id="email-error" class="actor-field-error" aria-live="polite"></div>
+                                        <div class="col-12 col-md-6">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" name="email" autocomplete="email" maxlength="254" required aria-describedby="email-error" placeholder="example@email.com">
+                                            <div id="email-error" class="actor-field-error" aria-live="polite"></div>
+                                        </div>
                                     </div>
-                                    <div class="col-12">
-                                        <label for="movie" class="form-label">Favorite movie</label>
-                                        <select class="form-select" id="movie" name="movie" required aria-describedby="movie-error">
+                                </fieldset>
+                                <fieldset class="actor-form-step" data-form-step>
+                                    <legend>Your movie feedback</legend>
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label for="movie" class="form-label">Favorite movie</label>
+                                            <select class="form-select" id="movie" name="movie" required aria-describedby="movie-error">
                                             <option value="" selected>Choose movie</option>
                                             <option>Fight Club</option>
                                             <option>Ocean's Eleven</option>
                                             <option>Once Upon a Time in Hollywood</option>
                                             <option>Interview with the Vampire</option>
-                                        </select>
-                                        <div id="movie-error" class="actor-field-error" aria-live="polite"></div>
+                                            </select>
+                                            <div id="movie-error" class="actor-field-error" aria-live="polite"></div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="comment" class="form-label">Comment</label>
+                                            <textarea class="form-control" id="comment" name="comment" required maxlength="2000" aria-describedby="comment-error" rows="4" placeholder="Write your opinion..."></textarea>
+                                            <div id="comment-error" class="actor-field-error" aria-live="polite"></div>
+                                        </div>
                                     </div>
-                                    <div class="col-12">
-                                        <label for="comment" class="form-label">Comment</label>
-                                        <textarea class="form-control" id="comment" name="comment" required maxlength="2000" aria-describedby="comment-error" rows="4" placeholder="Write your opinion..."></textarea>
-                                        <div id="comment-error" class="actor-field-error" aria-live="polite"></div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-primary btn-lg">Send</button>
-                                    </div>
+                                </fieldset>
+                                <div class="actor-form-actions">
+                                    <button type="button" class="btn btn-outline-primary" data-form-back hidden>Back</button>
+                                    <button type="button" class="btn btn-primary" data-form-next hidden>Next</button>
+                                    <button type="submit" class="btn btn-primary">Send feedback</button>
+                                    <button type="button" class="btn btn-outline-primary" data-form-reset hidden>Reset form</button>
                                 </div>
                                 <p class="actor-form-note mt-3">All fields are required. Demo only: feedback is validated in your browser and is not sent or saved.</p>
                                 <p id="feedback-status" class="actor-form-status" role="status"></p>
@@ -292,7 +304,7 @@
 
         <footer class="footer-banner">
             <p>Created by: Murodyan Mansur, Kairbek Agzam, Korostylev Dimitry. SE-2513 group. Team "ъ"</p>
-            <p>Date: 27 September 2026</p>
+            <p>Updated: 27 October 2026</p>
         </footer>
     </div>
 
@@ -325,5 +337,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="actors-interactions.js" defer></script>
+    <script src="actors-assignment5.js" defer></script>
+    <audio id="actor-chime" src="audio/actors-notification.wav" preload="none"></audio>
 </body>
 </html>

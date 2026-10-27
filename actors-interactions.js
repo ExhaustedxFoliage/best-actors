@@ -4,13 +4,16 @@
     function validateField(field) {
         let message = "";
         const value = field.value.trim();
+        const length = field.type === "password" ? field.value.length : value.length;
 
         if (field.required && value === "") {
             message = field.tagName === "SELECT" ? "Please choose a movie." : "This field is required.";
         } else if (field.type === "email" && field.validity.typeMismatch) {
             message = "Please enter a valid email address (e.g. name@example.com).";
-        } else if (field.type === "password" && field.value.length < field.minLength) {
+        } else if (field.minLength > 0 && length < field.minLength) {
             message = `Use at least ${field.minLength} characters.`;
+        } else if (field.maxLength > 0 && field.value.length > field.maxLength) {
+            message = `Use no more than ${field.maxLength} characters.`;
         } else if (field.id === "confirm-password" && field.value !== document.getElementById("subscription-password").value) {
             message = "Passwords do not match.";
         }
@@ -33,16 +36,75 @@
 
     function connectForm(form, onSuccess) {
         const fields = Array.from(form.querySelectorAll("[required]"));
+        const steps = Array.from(form.querySelectorAll("[data-form-step]"));
+        const nextButton = form.querySelector("[data-form-next]");
+        const backButton = form.querySelector("[data-form-back]");
+        const resetButton = form.querySelector("[data-form-reset]");
+        const submitButton = form.querySelector('[type="submit"]');
+        let currentStep = 0;
+
+        function showStep(index) {
+            steps.forEach((step, stepIndex) => {
+                step.hidden = stepIndex !== index;
+                step.classList.toggle("is-current", stepIndex === index);
+            });
+            backButton.hidden = index === 0;
+            nextButton.hidden = index === steps.length - 1;
+            submitButton.hidden = index !== steps.length - 1;
+            form.querySelector("[data-step-status]").textContent = `Step ${index + 1} of ${steps.length}`;
+        }
+
+        function moveStep(index, onStepChanged) {
+            currentStep = index;
+            onStepChanged(currentStep);
+        }
+
+        function nextStep() {
+            const stepFields = Array.from(steps[currentStep].querySelectorAll("[required]"));
+            const firstInvalid = stepFields.map(validateField).indexOf(false);
+            if (firstInvalid !== -1) {
+                stepFields[firstInvalid].focus();
+                return;
+            }
+            moveStep(currentStep + 1, showStep);
+            steps[currentStep].querySelector("input, select, textarea").focus();
+        }
+
+        if (steps.length > 0) {
+            nextButton.addEventListener("click", nextStep);
+            backButton.addEventListener("click", () => {
+                moveStep(currentStep - 1, showStep);
+                steps[currentStep].querySelector("input, select, textarea").focus();
+            });
+            resetButton.hidden = false;
+            resetButton.addEventListener("click", () => {
+                clearForm(form);
+                form.querySelector(".actor-form-status").textContent = "";
+                moveStep(0, showStep);
+                steps[0].querySelector("input").focus();
+            });
+            moveStep(0, showStep);
+        }
+
         form.noValidate = true;
         form.addEventListener("submit", (event) => {
             event.preventDefault();
+            if (steps.length > 0 && currentStep < steps.length - 1) {
+                nextStep();
+                return;
+            }
             const results = fields.map(validateField);
             const firstInvalid = results.indexOf(false);
             if (firstInvalid !== -1) {
+                if (steps.length > 0) {
+                    const invalidStep = steps.findIndex((step) => step.contains(fields[firstInvalid]));
+                    moveStep(invalidStep, showStep);
+                }
                 fields[firstInvalid].focus();
                 return;
             }
             onSuccess();
+            if (steps.length > 0) moveStep(0, showStep);
         });
         fields.forEach((field) => {
             field.addEventListener("input", () => {
@@ -115,6 +177,16 @@
         document.body.style.setProperty("--actor-background", colors[colorIndex]);
         document.getElementById("background-status").textContent = `Background: ${colorNames[colorIndex]}`;
     });
+
+    const changeTextButton = document.getElementById("change-text");
+    if (changeTextButton) {
+        changeTextButton.addEventListener("click", () => {
+            const heading = document.querySelector("h1");
+            const highlighted = heading.classList.toggle("actor-highlighted");
+            heading.textContent = highlighted ? "My Favorite Actor" : document.body.dataset.actorName;
+            changeTextButton.setAttribute("aria-pressed", String(highlighted));
+        });
+    }
 
     const clock = document.getElementById("actor-date-time");
     const dateFormat = new Intl.DateTimeFormat("en-US", {

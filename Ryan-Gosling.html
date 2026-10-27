@@ -135,6 +135,34 @@
                         </div> <!-- .cards-wrap -->
                     </section>
                     
+                    <!-- Task: Interactive Rating Stars -->
+                    <section id="rating-section" class="mb-5">
+                        <h2 class="section-title">Rate This Page</h2>
+                        <div class="cards-wrap p-4 text-center">
+                            <p class="fs-5 fw-bold mb-2">Click stars to rate:</p>
+                            <div id="rating-stars" class="fs-2" style="cursor: pointer; color: #ccc;">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                            <p id="rating-output" class="mt-2 fw-semibold text-primary">Current Rating: Not rated yet</p>
+                        </div>
+                    </section>
+
+                    <!-- Task: Dynamic Movies List via Arrays & Higher-Order Functions -->
+                    <section id="dynamic-movies" class="mb-5">
+                        <h2 class="section-title">Dynamic Movie Catalog</h2>
+                        <div class="mb-3 text-center">
+                            <button id="filter-all-btn" class="btn btn-outline-primary me-2">All</button>
+                            <button id="filter-recent-btn" class="btn btn-outline-primary">Recent (2015+)</button>
+                        </div>
+                        <div id="dynamic-cards-container" class="row g-4">
+                            <!-- JS with the stroke of help .map() и .filter() render of cards -->
+                        </div>
+                    </section>
+                                        
                     <!-- Task 2: Accordion for FAQs -->
                     <section id="faq-section" class="mb-5">
                         <h2 class="section-title">FAQ & Information</h2>
@@ -202,7 +230,7 @@
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">The Big Short</h5></div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="https://i.guim.co.uk/img/media/5f1b6553716c2ada1e0ea865d7d1eff512552865/66_0_2868_1721/master/2868.jpg?width=620&dpr=1&s=none&crop=none" class="d-block w-100" alt="Barbie">
+                                        <img src="photos/barbie.webp" class="d-block w-100" alt="Barbie">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Barbie</h5></div>
                                     </div>
                                     <div class="carousel-item">
@@ -303,5 +331,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="Murodyan_Mansur_asgn4.js"></script>
+
+    
 </body>
 </html>

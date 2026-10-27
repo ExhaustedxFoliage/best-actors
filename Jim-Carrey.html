@@ -133,6 +133,34 @@
                             </div>
                         </div>
                     </section>
+
+                    <!-- Task: Interactive Rating Stars -->
+                    <section id="rating-section" class="mb-5">
+                        <h2 class="section-title">Rate This Page</h2>
+                        <div class="cards-wrap p-4 text-center">
+                            <p class="fs-5 fw-bold mb-2">Click stars to rate:</p>
+                            <div id="rating-stars" class="fs-2" style="cursor: pointer; color: #ccc;">
+                                <span class="star" data-value="1">★</span>
+                                <span class="star" data-value="2">★</span>
+                                <span class="star" data-value="3">★</span>
+                                <span class="star" data-value="4">★</span>
+                                <span class="star" data-value="5">★</span>
+                            </div>
+                            <p id="rating-output" class="mt-2 fw-semibold text-primary">Current Rating: Not rated yet</p>
+                        </div>
+                    </section>
+
+                    <!-- Task: Dynamic Movies List via Arrays & Higher-Order Functions -->
+                    <section id="dynamic-movies" class="mb-5">
+                        <h2 class="section-title">Dynamic Movie Catalog</h2>
+                        <div class="mb-3 text-center">
+                            <button id="filter-all-btn" class="btn btn-outline-primary me-2">All</button>
+                            <button id="filter-recent-btn" class="btn btn-outline-primary">Recent (2015+)</button>
+                        </div>
+                        <div id="dynamic-cards-container" class="row g-4">
+                            <!-- JS with the stroke of help .map() и .filter() render of cards -->
+                        </div>
+                    </section>
                     
                     <!-- Task 2: Accordion for FAQs -->
                     <section id="faq-section" class="mb-5">
@@ -286,7 +314,7 @@
         <div class="custom-popup-content bg-white p-4 rounded shadow position-relative" style="width: 400px; max-width: 90%;">
             <button id="close-popup-btn" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"></button>
             <h3 class="mb-3">Subscribe to Updates</h3>
-            <p class="text-muted">Get the latest news about Ryan Gosling movies and projects.</p>
+            <p class="text-muted">Get the latest news about Jim Carrey movies and projects.</p>
             <form>
                 <div class="mb-3">
                     <label for="popup-email" class="form-label">Email address</label>

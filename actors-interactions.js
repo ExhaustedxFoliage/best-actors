@@ -89,6 +89,7 @@
         form.noValidate = true;
         form.addEventListener("submit", (event) => {
             event.preventDefault();
+            if (form.getAttribute("aria-busy") === "true") return;
             if (steps.length > 0 && currentStep < steps.length - 1) {
                 nextStep();
                 return;
@@ -103,8 +104,12 @@
                 fields[firstInvalid].focus();
                 return;
             }
-            onSuccess();
-            if (steps.length > 0) moveStep(0, showStep);
+            const complete = () => {
+                onSuccess();
+                if (steps.length > 0) moveStep(0, showStep);
+            };
+            const validated = new CustomEvent("actor:validated", { cancelable: true, detail: { complete } });
+            if (form.dispatchEvent(validated)) complete();
         });
         fields.forEach((field) => {
             field.addEventListener("input", () => {

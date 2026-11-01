@@ -1,0 +1,27 @@
+.actor-interactive-page #reading-progress { position: fixed; inset: 0 0 auto; height: 6px; background: #e1e6f3; z-index: 1100; }
+.actor-interactive-page #reading-progress span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #30458f, #00837a, #c88316); }
+.actor-interactive-page #actor-toast { display: none; position: fixed; bottom: 24px; right: 24px; max-width: min(420px, calc(100vw - 32px)); padding: 16px 20px; border-radius: 10px; background: #173f35; color: #fff; box-shadow: 0 4px 20px #0003; z-index: 1090; }
+.actor-interactive-page #movie-suggestions { list-style: none; padding: 0; margin: 4px 0 0; border: 1px solid #738bd0; border-radius: 8px; background: #fff; overflow: hidden; }
+.actor-interactive-page #movie-suggestions li { padding: 12px; cursor: pointer; color: #26344a; }
+.actor-interactive-page #movie-suggestions li:hover,
+.actor-interactive-page #movie-suggestions [aria-selected="true"] { background: #dce6ff; }
+.actor-interactive-page mark { background: #ffdb78; color: #242b3b; border-radius: 2px; padding: 0 2px; }
+.actor-interactive-page .actor-film-count { display: flex; align-items: baseline; gap: 10px; }
+.actor-interactive-page #film-counter { font-size: 2rem; color: #30458f; font-variant-numeric: tabular-nums; }
+.actor-interactive-page .actor-share { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; align-items: center; }
+.actor-interactive-page .actor-share label { flex-basis: 100%; font-weight: 700; }
+.actor-interactive-page .actor-share input { flex: 1 1 200px; min-width: 0; }
+.actor-interactive-page #copy-tooltip { color: #19582e; font-weight: 600; }
+.actor-interactive-page .actor-submit-spinner { display: inline-block; width: 1em; height: 1em; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: actor-spin 700ms linear infinite; vertical-align: middle; }
+.actor-interactive-page img[data-src] { min-height: 180px; background: #dce3ef; }
+.actor-interactive-page .actor-image-error { min-height: 180px; background: #e5e9f2; }
+.actor-interactive-page.actor-night #film-counter,
+.actor-interactive-page.actor-night #copy-tooltip { color: #a2e6b2; }
+.actor-interactive-page.actor-night #movie-suggestions { background: #1b283e; }
+.actor-interactive-page.actor-night #movie-suggestions li { color: #e2e8f0; }
+.actor-interactive-page.actor-night #movie-suggestions li:hover,
+.actor-interactive-page.actor-night #movie-suggestions [aria-selected="true"] { background: #30456a; }
+@keyframes actor-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .actor-interactive-page .actor-submit-spinner { animation: none; } }
+.actor-interactive-page .actor-film-count { color: #30458f; }
+.actor-interactive-page.actor-night .actor-film-count { color: #e2e8f0; }

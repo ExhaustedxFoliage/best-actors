@@ -127,6 +127,7 @@
         movieStatus.textContent = movies.length ? `${movies.length} films to explore` : "No films match. Try another title or choose All films.";
         filters.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.movieFilter === category)));
         animateChange(results);
+        results.dispatchEvent(new CustomEvent("actor:movies-rendered"));
     }
 
     filters.forEach((button) => {
@@ -135,7 +136,7 @@
             renderMovies();
         });
     });
-    search.addEventListener("input", renderMovies);
+    search.addEventListener("actor:search", renderMovies);
     document.getElementById("clear-ratings").addEventListener("click", () => {
         actor.ratings = {};
         renderMovies();

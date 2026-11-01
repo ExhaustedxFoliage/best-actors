@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderMovies(arr) {
         if (!container) return;
-        // Method .map() for generation HTML-строк from array of objects
+        // Method .map() for generation HTML-strings from array of objects
         container.innerHTML = arr.map(movie => `
             <div class="col-12 col-md-6 col-lg-3">
                 <div class="card actor-card h-100" style="transition: transform 0.3s ease;">
@@ -252,6 +252,104 @@ document.addEventListener('DOMContentLoaded', () => {
                 body.style.display = isVisible ? 'none' : 'block';
             }
         });
+    });
+
+});
+
+$(document).ready(function() {
+    console.log("jQuery is ready!"); // Проверка подключения Task 0
+
+    // ==========================================
+    // PART 1. JQUERY SEARCH
+    // ==========================================
+
+    // Task 1: Real-time Search and Live Filter
+    $('#search-input').on('keyup', function() {
+        let value = $(this).val().toLowerCase();
+        // Фильтруем элементы списка или карточки по введенному тексту
+        $('.searchable-item').filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
+
+    // Task 2: Autocomplete Search Suggestions (Пример реализации)
+    const suggestions = ["Drive", "La La Land", "Blade Runner 2049", "Barbie", "Ryan Gosling", "Jim Carrey", "Brad Pitt", "Jason Statham"];
+    $('#search-input').on('input', function() {
+        let inputVal = $(this).val().toLowerCase();
+        let $list = $('#autocomplete-list');
+        $list.empty();
+        
+        if (inputVal.length > 0) {
+            let matches = suggestions.filter(item => item.toLowerCase().includes(inputVal));
+            matches.forEach(match => {
+                $list.append(`<div class="suggestion-item p-2 border-bottom bg-white" style="cursor: pointer;">${match}</div>`);
+            });
+        }
+    });
+
+    $(document).on('click', '.suggestion-item', function() {
+        $('#search-input').val($(this).text());
+        $('#autocomplete-list').empty();
+    });
+
+    // Task 3: Search Highlighting
+    function highlightKeyword(keyword) {
+        let contentArea = document.querySelector('.content-area');
+        if (!contentArea || !keyword) return;
+    }
+
+
+    // ==========================================
+    // PART 2. UX ENGAGEMENT ELEMENTS
+    // ==========================================
+
+    // Task 4: Colorful and Stylized Scroll Progress Bar
+    $(window).on('scroll', function() {
+        let winScroll = $(window).scrollTop();
+        let height = $(document).height() - $(window).height();
+        let scrolled = (winScroll / height) * 100;
+        $('#scroll-progress').css('width', scrolled + '%');
+    });
+
+    // Task 5: Animated Number Counter
+    let counted = false;
+    $(window).on('scroll', function() {
+        let statsOffset = $('#stats-section').offset();
+        if (statsOffset && !counted && $(window).scrollTop() + $(window).height() > statsOffset.top) {
+            $('.counter').each(function() {
+                let $this = $(this);
+                let countTo = $this.attr('data-count');
+                $({ countNum: $this.text() }).animate({
+                    countNum: countTo
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function() {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function() {
+                        $this.text(this.countNum + "+");
+                    }
+                });
+            });
+            counted = true;
+        }
+    });
+
+    // Task 6: Loading spinner on Form Submit
+    $('#feedback form').on('submit', function(e) {
+        e.preventDefault();
+        let $submitBtn = $(this).find('button[type="submit"]');
+        
+        $submitBtn.prop('disabled', true);
+        let originalText = $submitBtn.text();
+        $submitBtn.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Please wait...');
+
+        setTimeout(function() {
+            $submitBtn.prop('disabled', false);
+            $submitBtn.text(originalText);
+            alert('Form submitted successfully!');
+        }, 2000);
     });
 
 });

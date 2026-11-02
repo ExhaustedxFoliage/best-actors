@@ -25,3 +25,5 @@
 @media (prefers-reduced-motion: reduce) { .actor-interactive-page .actor-submit-spinner { animation: none; } }
 .actor-interactive-page .actor-film-count { color: #30458f; }
 .actor-interactive-page.actor-night .actor-film-count { color: #e2e8f0; }
+.actor-interactive-page .actor-share label { color: #30458f; }
+.actor-interactive-page.actor-night .actor-share label { color: #e2e8f0; }

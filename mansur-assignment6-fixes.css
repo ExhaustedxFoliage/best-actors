@@ -7,3 +7,5 @@
 #autocomplete-list button:hover { background:#dce6ff; }
 mark { background:#ffdb78; color:#242b3b; }
 img[data-src] { min-height:150px; background:#dce3ef; }
+.mansur-share label { color:#30458f; }
+#mansur-copy-tooltip { color:#19582e; }

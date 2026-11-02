@@ -112,65 +112,59 @@ $(document).ready(function() {
 
     $('#filter-all-btn').on('click', function() {
         renderMovies(moviesData);
+        $(".searchable-item .card-title").each(function () { originalTitles.set(this, $(this).text()); });
+        searchMovies();
     });
 
     $('#filter-recent-btn').on('click', function() {
         const filtered = moviesData.filter(m => m.year >= 2015);
         renderMovies(filtered);
+        $(".searchable-item .card-title").each(function () { originalTitles.set(this, $(this).text()); });
+        searchMovies();
     });
 
 
     // ==========================================
     // 5. PART 1. JQUERY SEARCH, FILTER & HIGHLIGHT
     // ==========================================
-    // Task 1: Real-time Search and Live Filter
-    $('#search-input').on('keyup', function() {
-        let value = $(this).val().toLowerCase();
-        $('.searchable-item').filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-        });
-    });
-
-    // Task 2: Autocomplete Search Suggestions
-    const suggestions = ["Drive", "La La Land", "Blade Runner 2049", "Barbie", "Ryan Gosling", "Jim Carrey", "Brad Pitt", "Jason Statham"];
-    $('#search-input').on('input', function() {
-        let inputVal = $(this).val().toLowerCase();
-        let $list = $('#autocomplete-list');
-        if (!$list.length) {
-            // Создаем блок автокомплита под инпутом, если его нет в HTML
-            $('#search-input').after('<div id="autocomplete-list" class="position-absolute w-100 shadow-sm" style="z-index: 1000;"></div>');
-            $list = $('#autocomplete-list');
-        }
-        $list.empty();
-        
-        if (inputVal.length > 0) {
-            let matches = suggestions.filter(item => item.toLowerCase().includes(inputVal));
-            matches.forEach(match => {
-                $list.append(`<div class="suggestion-item p-2 border-bottom bg-white text-dark" style="cursor: pointer;">${match}</div>`);
-            });
-        }
-    });
-
-    $(document).on('click', '.suggestion-item', function() {
-        $('#search-input').val($(this).text());
-        $('#autocomplete-list').empty();
-    });
-
-    // Task 3: Search Highlighting (.html(), regex, .wrap())
-    function highlightKeyword(keyword) {
-        let $contentArea = $('.content-area');
-        if (!$contentArea.length || !keyword) return;
-        // Простая реализация подсветки ключевых слов
-        let textNodes = $contentArea.find('p, h1, h2, h3, h4');
-        textNodes.each(function() {
-            let html = $(this).html();
-            let regex = new RegExp(`(${keyword})`, 'gi');
-            // Подсветка через обертку span
-            // html = html.replace(regex, '<span class="bg-warning text-dark">$1</span>');
-            // $(this).html(html);
+    $('#search-input').after($('<div>', { id: 'autocomplete-list' }));
+    const suggestions = $('.searchable-item .card-title').map(function () { return $(this).text().trim(); }).get();
+    const originalTitles = new Map();
+    $('.searchable-item .card-title').each(function () { originalTitles.set(this, $(this).text()); });
+    function searchMovies() {
+        const query = $('#search-input').val().trim().toLowerCase();
+        $('.searchable-item').each(function () {
+            const title = $(this).find('.card-title')[0];
+            const text = originalTitles.get(title) || $(this).text();
+            $(this).toggle(text.toLowerCase().includes(query));
+            if (!title) return;
+            $(title).empty();
+            let cursor = 0;
+            let index;
+            while (query && (index = text.toLowerCase().indexOf(query, cursor)) !== -1) {
+                title.append(document.createTextNode(text.slice(cursor, index)));
+                $('<mark>').text(text.slice(index, index + query.length)).appendTo(title);
+                cursor = index + query.length;
+            }
+            title.append(document.createTextNode(text.slice(cursor)));
         });
     }
-
+    $('#search-input').on('input keyup', function () {
+        searchMovies();
+        const query = $(this).val().trim().toLowerCase();
+        const $list = $('#autocomplete-list').empty();
+        suggestions.filter(title => query && title.toLowerCase().includes(query)).forEach(title => {
+            $('<button>', { type: 'button', class: 'suggestion-item d-block w-100 p-2 text-start', text: title }).appendTo($list);
+        });
+    });
+    $(document).on('click', '.suggestion-item', function () {
+        $('#search-input').val($(this).text());
+        $('#autocomplete-list').empty();
+        searchMovies();
+    });
+    $(document).on('click', function (event) {
+        if (!$(event.target).closest('#search-section').length) $('#autocomplete-list').empty();
+    });
 
     // ==========================================
     // 6. PART 2. UX ENGAGEMENT ELEMENTS
@@ -222,7 +216,7 @@ $(document).ready(function() {
 
         let isValid = true;
         let errorMessages = [];
-        const emailRegex = /^[^\s@]+@astanait\.edu\.kz+[^\s@]+$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (nameInput.length && nameInput.val().trim() === '') {
             isValid = false;
@@ -235,7 +229,7 @@ $(document).ready(function() {
         if (emailInput.length && (emailInput.val().trim() === '' || !emailRegex.test(emailInput.val().trim()))) {
             isValid = false;
             emailInput.addClass('is-invalid');
-            errorMessages.push('Valid email address (@astanait.edu.kz) is required.');
+            errorMessages.push('Valid email address is required.');
         } else if (emailInput.length) {
             emailInput.removeClass('is-invalid');
         }
@@ -262,7 +256,7 @@ $(document).ready(function() {
         setTimeout(function() {
             $submitBtn.prop('disabled', false);
             $submitBtn.text(originalText);
-            alert('Thank you for your feedback! The form was submitted successfully.');
+            showToast('Feedback validated successfully. Demo only: nothing was sent.');
             $('#feedback form')[0].reset();
             $('#name, #email, #comment').removeClass('is-invalid');
         }, 2000);
@@ -309,5 +303,33 @@ $(document).ready(function() {
             $('#popup-modal').css('display', 'none');
         }
     });
+
+    function showToast(message) {
+        $('#mansur-toast').stop(true, true).text(message).fadeIn(150).delay(2400).fadeOut(350);
+    }
+    let copyTimer;
+    $('#mansur-copy').on('click', async function () {
+        try {
+            await navigator.clipboard.writeText($('#mansur-share').val());
+            clearTimeout(copyTimer);
+            $(this).text('✓ Copied');
+            $('#mansur-copy-tooltip').prop('hidden', false);
+            showToast('Copied to clipboard!');
+            copyTimer = setTimeout(() => { $('#mansur-copy').text('Copy link'); $('#mansur-copy-tooltip').prop('hidden', true); }, 3000);
+        } catch (error) {
+            $('#mansur-share')[0].select();
+            showToast('Copy unavailable. Select the link and copy it manually.');
+        }
+    });
+    $('#mansur-share').val(location.href.split('#')[0]);
+    function loadVisibleImages() {
+        $('img[data-src]:visible').each(function () {
+            const bounds = this.getBoundingClientRect();
+            if (bounds.top <= innerHeight && bounds.bottom >= 0) $(this).attr('src', $(this).attr('data-src')).removeAttr('data-src');
+        });
+    }
+    $(window).on('scroll resize load', loadVisibleImages);
+    $('.carousel').on('slide.bs.carousel', event => $(event.relatedTarget).find('img[data-src]').each(function () { $(this).attr('src', $(this).attr('data-src')).removeAttr('data-src'); }));
+    loadVisibleImages();
 
 });

@@ -1,0 +1,9 @@
+#mansur-toast { display:none; position:fixed; bottom:24px; right:24px; max-width:min(420px,calc(100vw - 32px)); padding:16px; background:#173f35; color:white; border-radius:10px; z-index:11000; }
+.mansur-share { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px; }
+.mansur-share label { flex-basis:100%; font-weight:700; }
+.mansur-share input { flex:1 1 200px; min-width:0; }
+#autocomplete-list { position:absolute; width:100%; z-index:20; background:white; }
+#autocomplete-list button { min-height:44px; background:white; color:#26344a; border:1px solid #9caed5; }
+#autocomplete-list button:hover { background:#dce6ff; }
+mark { background:#ffdb78; color:#242b3b; }
+img[data-src] { min-height:150px; background:#dce3ef; }

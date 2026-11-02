@@ -11,8 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <link rel="stylesheet" href="mansur-assignment6-fixes.css">
 </head>
 <body>
+    <div id="mansur-toast" role="status" aria-live="polite"></div>
     <div id="scroll-progress" style="position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(to right, #ff7e5f, #feb47b); z-index: 9999; width: 0%;"></div>
     <div class="container-fluid px-0">
         <nav class="navbar navbar-expand-lg main-navbar px-4 py-3">
@@ -101,7 +104,7 @@
                             <div class="row g-4">
                                 <div class="col-12 col-md-6 col-lg-4 col-xs-3 searchable-item">
                                     <div class="card actor-card">
-                                        <img src="photos/Carrey_mask.png" class="card-img-top" alt="The Mask">
+                                        <img data-src="photos/Carrey_mask.png" class="card-img-top" alt="The Mask">
                                         <div class="card-body d-flex flex-column">
                                             <h4 class="card-title">The Mask (1994)</h4>
                                             <p class="card-text">A timid bank clerk turns into a grinning superhero with wild abilities after finding a mask.</p>
@@ -112,7 +115,7 @@
 
                                 <div class="col-12 col-md-6 col-lg-4 searchable-item">
                                     <div class="card actor-card">
-                                        <img src="photos/Carrey_dumb.png" class="card-img-top" alt="Dumb and Dumber">
+                                        <img data-src="photos/Carrey_dumb.png" class="card-img-top" alt="Dumb and Dumber">
                                         <div class="card-body d-flex flex-column">
                                             <h4 class="card-title">Dumb and Dumber</h4>
                                             <p class="card-text">Two dimwitted friends embark on a cross-country trip to return a briefcase.</p>
@@ -123,7 +126,7 @@
 
                                 <div class="col-12 col-md-6 col-lg-4 searchable-item">
                                     <div class="card actor-card">
-                                        <img src="photos/Carrey_truman.jpg" class="card-img-top" alt="The Truman Show">
+                                        <img data-src="photos/Carrey_truman.jpg" class="card-img-top" alt="The Truman Show">
                                         <div class="card-body d-flex flex-column">
                                             <h4 class="card-title">The Truman Show</h4>
                                             <p class="card-text">An insurance salesman discovers his entire life is actually a TV show.</p>
@@ -152,6 +155,7 @@
                     </section>
                     
                     <!-- Task 1 & 2: Real-time Search & Autocomplete -->
+                    <section id="stats-section" class="mb-4"><h2 class="section-title">Featured films</h2><p class="counter display-5" data-count="3">0</p></section>
                     <section id="search-section" class="mb-5 position-relative">
                         <h2 class="section-title">Live Search & Suggestions</h2>
                         <div class="form-group position-relative">
@@ -212,39 +216,39 @@
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="photos/Carrey_Ace.jpg" class="d-block w-100" alt="Ace Ventura">
+                                        <img data-src="photos/Carrey_Ace.jpg" class="d-block w-100" alt="Ace Ventura">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Ace Ventura</h5></div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="photos/Carrey_mask2.jpg" class="d-block w-100" alt="The Mask">
+                                        <img data-src="photos/Carrey_mask2.jpg" class="d-block w-100" alt="The Mask">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">The Mask</h5></div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="photos/Carrey_dumb2.jpg" class="d-block w-100" alt="Dumb and Dumber">
+                                        <img data-src="photos/Carrey_dumb2.jpg" class="d-block w-100" alt="Dumb and Dumber">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Dumb and Dumber</h5></div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="photos/Carrey_liarliar.jpg" class="d-block w-100" alt="Liar Liar">
+                                        <img data-src="photos/Carrey_liarliar.jpg" class="d-block w-100" alt="Liar Liar">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Liar Liar</h5></div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="photos/Carrey_truman2.jpg" class="d-block w-100" alt="The Truman Show">
+                                        <img data-src="photos/Carrey_truman2.jpg" class="d-block w-100" alt="The Truman Show">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">The Truman Show</h5></div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="photos/Carrey_moon.jpg" class="d-block w-100" alt="Man on the Moon">
+                                        <img data-src="photos/Carrey_moon.jpg" class="d-block w-100" alt="Man on the Moon">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Man on the Moon</h5></div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="photos/Carrey_almighty.jpg" class="d-block w-100" alt="Bruce Almighty">
+                                        <img data-src="photos/Carrey_almighty.jpg" class="d-block w-100" alt="Bruce Almighty">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Bruce Almighty</h5></div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="photos/Carrey_eternal.jpg" class="d-block w-100" alt="Eternal Sunshine">
+                                        <img data-src="photos/Carrey_eternal.jpg" class="d-block w-100" alt="Eternal Sunshine">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Eternal Sunshine</h5></div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="photos/Carrey_Sonic.jpg" class="d-block w-100" alt="Sonic The Hedgehog">
+                                        <img data-src="photos/Carrey_Sonic.jpg" class="d-block w-100" alt="Sonic The Hedgehog">
                                         <div class="carousel-caption d-none d-md-block p-2"><h5 class="mb-0">Sonic The Hedgehog</h5></div>
                                     </div>
                                 </div>
@@ -301,6 +305,7 @@
                     <section id="links" class="mb-2">
                         <h2 class="section-title">Links</h2>
                         <div class="links-wrap">
+                            <div class="mansur-share"><label for="mansur-share">Share this actor page</label><input id="mansur-share" class="form-control" readonly><button id="mansur-copy" type="button" class="btn btn-outline-primary" aria-describedby="mansur-copy-tooltip">Copy link</button><span id="mansur-copy-tooltip" hidden>Copied to clipboard!</span></div>
                             <div class="btn-group" role="group">
                                 <a href="https://www.imdb.com/name/nm0000120/" target="_blank" class="btn btn-primary">IMDB</a>
                                 <a href="https://en.wikipedia.org/wiki/Jim_Carrey" target="_blank" class="btn btn-outline-primary">Wikipedia</a>
@@ -336,7 +341,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     <script src="murodyan_mansur_jQuery.js"></script>
 </body>
 </html>

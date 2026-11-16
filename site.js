@@ -42,14 +42,19 @@
   const form = document.getElementById('feedback-form');
   const dialog = document.getElementById('feedback-success');
   if (form && dialog) {
+    const validation = window.ActorsForms.connect(form, {
+      name: window.ActorsForms.rules.name,
+      email: window.ActorsForms.rules.email,
+      phone: value => window.ActorsForms.rules.phone(value, true),
+      movie: value => Array.from(form.elements.movie.options).some(option => option.value === value && value) ? '' : 'Choose a performance.',
+      comment: window.ActorsForms.rules.comment
+    });
     form.addEventListener('submit', event => {
       event.preventDefault();
-      const empty = Array.from(form.querySelectorAll('[required]')).find(field => !field.value.trim());
-      if (empty) { empty.setCustomValidity('Please fill out this field.'); empty.reportValidity(); return; }
-      if (!form.reportValidity()) return;
-      form.reset(); dialog.showModal();
+      if (!validation.validate()) return;
+      validation.reset(); dialog.showModal();
     });
-    form.addEventListener('input', event => event.target.setCustomValidity(''));
+    dialog.addEventListener('close', () => form.querySelector('[type="submit"]').focus());
     document.getElementById('close-success').addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', event => {
       const rect = dialog.getBoundingClientRect();
@@ -64,7 +69,7 @@ if (window.jQuery) jQuery(function ($) {
   if (!$input.length) return;
   const $rows = $('.catalog-row');
   const $results = $('#actor-search-results');
-  const actors = $('.site-header nav a').filter(function () { return $(this).text() !== 'Home'; }).map(function () {
+  const actors = $('.site-header nav a').filter(function () { return ['Jim-Carrey.html', 'pitt.html', 'statham.html', 'Ryan-Gosling.html', 'antony_starr.html'].includes($(this).attr('href')); }).map(function () {
     return { label: $(this).text(), href: $(this).attr('href'), kind: 'Actor' };
   }).get();
   const titles = $rows.map(function () {

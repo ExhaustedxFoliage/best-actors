@@ -60,12 +60,4 @@ input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
     .site-header nav a { min-height: 34px; }
 }
 @media (prefers-reduced-motion: reduce) { .theme-track::before { transition: none; } }
-/* Keep the legacy account screens readable until their separate auth implementation is completed. */
-body.has-team-credits { background: var(--paper); color: var(--ink); min-height: 100vh; height: auto; padding: 24px 16px; }
-.has-team-credits .banner { background: var(--white); border-color: var(--line); max-width: 100%; }
-.has-team-credits .banner-main { max-width: 100%; padding: 18px; }
-.has-team-credits h1 { color: var(--green); text-align: center; font-size: 30px; }
-.has-team-credits .input-field { background: var(--white); color: var(--ink); border-color: var(--line); max-width: 100%; }
-.has-team-credits .btn { background: var(--green); color: var(--button-ink); }
-.has-team-credits .team-credits { color: var(--muted); }
-.has-team-credits, .has-team-credits * { box-sizing: border-box; }
+#feedback-form input, #feedback-form select, #feedback-form textarea { font-size: 16px; }
